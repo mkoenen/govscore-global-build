@@ -23,20 +23,19 @@ function setbuttons() {
 /* Globalization ---------------------------------------*/
 
 function checkLanguage() {
-      navigator.globalization.getPreferredLanguage(
-        function (language) {
-            var lang = language.value;
-            translatenow(lang);
-            return lang
-        },
-        function () {alert('Error getting language\n');}
-      );
-    }
+  navigator.globalization.getPreferredLanguage(
+    function (language) {
+        var lang = language.value;
+        translatenow(lang);
+        
+    },
+    function () {alert('Error getting language\n');}
+  );
+  return lang
+}
+ console.log(lang);   
 
 function translatenow(mylang) { 
-  
-
-
 
     alert('language: ' + mylang + ' again\n');
 
@@ -281,13 +280,13 @@ function validate(event) {
         notification('You previously finished this assessment. Please check your results.', goTo(), "Already Completed", "OK");
   }else{  
       if( document.gsForm.username.value === "" ) {
-             notification(  "<span id='full-name'></span>" );
+             notification(  "Please enter your full name." );
              document.gsForm.username.focus();
              event.preventDefault();
              return false;      
       }
       if( document.gsForm.email.value !== document.gsForm.email2.value ) {
-            notification(  "<span id='no-match'>Email entries don't match. Please try again</span>" );
+            notification(  "Email entries don't match. Please try again" );
             document.gsForm.email.focus();
             event.preventDefault();
             return false;    
