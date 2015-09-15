@@ -847,6 +847,7 @@ function calcResults() {
             res_en += "<div id=\"adv-govscore\"><h3>Continuous Governance Enhancement</h3><p>" + ag5results + " <span>out of 16</span> - " + ag5percent + "%</p><p id='place-at'>This places your organization at:</p><p>" + ag5level + "</p></div>";
         }
     }
+    var lang = localStorage.getObject('lang');
     if(lang == "fr" ) {
         localStorage.setItem("result", res_fr);
         document.getElementById('gs-results').innerHTML = res_fr;
