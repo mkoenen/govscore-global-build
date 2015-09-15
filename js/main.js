@@ -367,14 +367,12 @@ function adv_validate( savedData, length, keyaug, savefunc){
 /* Notifications ----------------------------------*/
 
 function notification(message,callbk,title,btname) {
-      window.alert = function (message,callbk,title,btname) {
           navigator.notification.alert(
               message,      // message
               callbk,       // callback
               title,        // title
               btname        // buttonName
           );
-      };
 }
 
 
