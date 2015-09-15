@@ -367,7 +367,6 @@ function adv_validate( savedData, length, keyaug, savefunc){
 /* Notifications ----------------------------------*/
 
 function notification(message,callbk,title,btname) {
-  if (navigator.notification) { 
       window.alert = function (message,callbk,title,btname) {
           navigator.notification.alert(
               message,      // message
@@ -376,10 +375,6 @@ function notification(message,callbk,title,btname) {
               btname        // buttonName
           );
       };
-   }else{
-      alert(message);
-      callbk;
-   }
 }
 
 
