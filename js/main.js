@@ -21,19 +21,19 @@ function setbuttons() {
 }
 
 /* Globalization ---------------------------------------*/
-
+var lang;
 function checkLanguage() {
   navigator.globalization.getPreferredLanguage(
     function (language) {
-        var lang = language.value;
+        lang = language.value;
         translatenow(lang);
-        
+        console.log(lang);
     },
     function () {alert('Error getting language\n');}
   );
   return lang
 }
- console.log(lang);   
+console.log(lang);   
 
 function translatenow(mylang) { 
 
