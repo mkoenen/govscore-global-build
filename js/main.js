@@ -26,6 +26,7 @@ function checkLanguage() {
   navigator.globalization.getPreferredLanguage(
     function (language) {
         var lang = language.value;
+        lang = lang.slice(0, 2);
         translatenow(lang);
         localStorage.setObject('lang', lang);
     },
@@ -38,17 +39,17 @@ function translatenow(mylang) {
 
     alert('language: ' + mylang + ' again\n');
 
-    if(mylang.indexOf("fr") == 0 ) {
+    if(mylang == "fr" ) {
       $.getScript("js/i18n/translation_fr.js", function(){
         $.i18n.load(i18n_dict_fr);
         map_all();
       });
-    }else if(mylang.indexOf("es") == 0 ) {
+    }else if(mylang == "es") {
       $.getScript("js/i18n/translation_es.js", function(){
         $.i18n.load(i18n_dict_es);
         map_all();
       });
-    }else if(mylang.indexOf("pt") == 0 ) {
+    }else if(mylang == "pt" ) {
       $.getScript("js/i18n/translation_pt.js", function(){
         $.i18n.load(i18n_dict_pt);
         map_all();
