@@ -21,20 +21,18 @@ function setbuttons() {
 }
 
 /* Globalization ---------------------------------------*/
-var lang;
+
 function checkLanguage() {
   navigator.globalization.getPreferredLanguage(
     function (language) {
-        lang = language.value;
+        var lang = language.value;
         translatenow(lang);
-        console.log(lang);
-        return(lang);
+        localStorage.setObject('lang', lang);
     },
     function () {alert('Error getting language\n');}
   );
-  console.log(lang);
 }
-console.log(lang);   
+  
 
 function translatenow(mylang) { 
 
@@ -712,6 +710,7 @@ function calcResults() {
     }
 
     function findLevel(score){
+        var lang = localStorage.getObject('lang');
         switch(true) {
             case( score <= 25 ):
                 if(lang == "fr"){
