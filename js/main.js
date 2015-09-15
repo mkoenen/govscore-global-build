@@ -23,15 +23,14 @@ function setbuttons() {
 /* Globalization ---------------------------------------*/
 
 function checkLanguage() {
-      translatenow("en");
-      /*navigator.globalization.getPreferredLanguage(
+      navigator.globalization.getPreferredLanguage(
         function (language) {
             var lang = language.value;
             translatenow(lang);
             return lang
         },
         function () {alert('Error getting language\n');}
-      );*/
+      );
     }
 
 function translatenow(mylang) { 
@@ -57,11 +56,11 @@ function translatenow(mylang) {
         map_all();
       });
     }else{
-      //$.getScript("js/i18n/translation_en.js", function(){
+      $.getScript("js/i18n/translation_en.js", function(){
         $.i18n.load(i18n_dict);
         map_all();
         
-      //});
+      });
     }
 
 function map_all(){
