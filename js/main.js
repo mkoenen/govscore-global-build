@@ -31,7 +31,7 @@ function checkLanguage() {
     },
     function () {alert('Error getting language\n');}
   );
-  return lang
+  
 }
 console.log(lang);   
 
