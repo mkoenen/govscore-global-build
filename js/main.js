@@ -28,6 +28,7 @@ function checkLanguage() {
         lang = language.value;
         translatenow(lang);
         console.log(lang);
+        return(lang);
     },
     function () {alert('Error getting language\n');}
   );
