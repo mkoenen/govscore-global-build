@@ -32,7 +32,7 @@ function checkLanguage() {
     },
     function () {alert('Error getting language\n');}
   );
-  
+  console.log(lang);
 }
 console.log(lang);   
 
