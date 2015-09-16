@@ -144,7 +144,7 @@ i18n_dict_pt = {
     "ag99"        : "c. O órgão de governação ou os líderes de governação melhoram continuamente o seu próprio desempenho, trabalhando nas áreas mais fracas anotadas nas avaliações periódicas.",
     "ag100"       : "d. O órgão de governação ou os líderes de governação usam os seus conhecimentos sobre governação para melhorarem o desempenho da organização.", 
     /* Question Headers */
-    "header-ca-1" ;
+    "header-ca-1" :
     "header-ca-2" :
     "header-ca-3" :
     "header-ca-4" :

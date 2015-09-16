@@ -143,4 +143,56 @@ i18n_dict_es = {
     "ag98"        : "b. El ente rector o los líderes que rigen emplean el proceso de evaluación para identificar oportunidades específicas de mejoramiento, definir las metas específicas de mejoramiento del desempeño  e incluirlas en el plan para su mejoramiento.",
     "ag99"        : "c. El ente rector o los líderes que rigen mejoran continuamente su propio desempeño trabajando en sus debilidades identificadas en la evaluación.",
     "ag100"       : "d. El ente rector o los líderes que rigen usan su educación en gobernanza para mejorar el desempeño de la organización.",
+    /* Question Headers */
+    "header-ca-1" :
+    "header-ca-2" :
+    "header-ca-3" :
+    "header-ca-4" :
+    "header-ca-5" :
+    "header-ca-6" :
+    "header-es-1" :
+    "header-es-2" :
+    "header-es-3" :
+    "header-es-4" :
+    "header-es-5" :
+    "header-es-6" :
+    "header-ssd-1":
+    "header-ssd-2":
+    "header-ssd-3":
+    "header-sr-1" :
+    "header-sr-2" :
+    "header-sr-3" :
+    "header-sr-4" :
+    "header-sr-5" :
+    "header-sr-6" :
+    "header-cce-1":
+    "header-cce-2":
+    "header-cce-3":
+    "header-cce-4":
+    /* Legend */
+    "legend-header" : "Legend", 
+    "not-at-all"    : "Not at all",
+    "minimally"     : "Minimally",
+    "partly"        : "Partly",
+    "mostly"        : "Mostly",
+    "completely"    : "Completely", 
+    /* Headers */
+    "how-to"        : "How to",
+    "gs-header"     : "Govscore",
+    "adv-header"    : "Advanced Govscore",
+    "accountability" : "Cultivating Accountability",
+    "stakeholders"  : "Engaging Stakeholders",
+    "direction"     : "Shared Strategic Direction",
+    "resources"     : "Stewarding Resources",
+    "enhancement"   : "Continuous Governance Enhancement",
+    "gs-res-header" : "Govscore Results",
+    /* Bottom Nav */
+    "adv"           : "Advanced",
+    "res"           : "Results",
+    /* Buttons */
+    "govscore-results" : "Assessment Completed<br>See Your Results",
+    "submit"        : "Submit",
+    /* Messages */
+    "check-answers" : "Please check your answers. You can only submit this form once.",
+    "no-results"    : "No results available at this time.",
   };

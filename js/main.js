@@ -20,6 +20,17 @@ function setbuttons() {
     document.getElementById('ag5Store').addEventListener('click', function(){ adv_validate(ag5data, 16, 84, ag5savelocal); });
 }
 
+/* Storage --------------------------------------------*/
+
+Storage.prototype.setObject = function(key, value) {
+    this.setItem(key, JSON.stringify(value));
+}
+
+Storage.prototype.getObject = function(key) {
+    var value = this.getItem(key);
+    return value && JSON.parse(value);
+}
+
 /* Globalization ---------------------------------------*/
 
 function checkLanguage() {
@@ -567,14 +578,6 @@ function onOnline(event) {
 
 /* Functions for processing data -----------------------------------------------*/
 
-Storage.prototype.setObject = function(key, value) {
-    this.setItem(key, JSON.stringify(value));
-}
-
-Storage.prototype.getObject = function(key) {
-    var value = this.getItem(key);
-    return value && JSON.parse(value);
-}
 
 //get answers from form and build json array
 function getinputs(answerset,num1,num2,prefix){
