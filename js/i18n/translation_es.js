@@ -144,31 +144,31 @@ i18n_dict_es = {
     "ag99"        : "c. El ente rector o los líderes que rigen mejoran continuamente su propio desempeño trabajando en sus debilidades identificadas en la evaluación.",
     "ag100"       : "d. El ente rector o los líderes que rigen usan su educación en gobernanza para mejorar el desempeño de la organización.",
     /* Question Headers */
-    "header-ca-1" :
-    "header-ca-2" :
-    "header-ca-3" :
-    "header-ca-4" :
-    "header-ca-5" :
-    "header-ca-6" :
-    "header-es-1" :
-    "header-es-2" :
-    "header-es-3" :
-    "header-es-4" :
-    "header-es-5" :
-    "header-es-6" :
-    "header-ssd-1":
-    "header-ssd-2":
-    "header-ssd-3":
-    "header-sr-1" :
-    "header-sr-2" :
-    "header-sr-3" :
-    "header-sr-4" :
-    "header-sr-5" :
-    "header-sr-6" :
-    "header-cce-1":
-    "header-cce-2":
-    "header-cce-3":
-    "header-cce-4":
+    "header-ca-1" : "",
+    "header-ca-2" : "",
+    "header-ca-3" : "",
+    "header-ca-4" : "",
+    "header-ca-5" : "",
+    "header-ca-6" : "",
+    "header-es-1" : "",
+    "header-es-2" : "",
+    "header-es-3" : "",
+    "header-es-4" : "",
+    "header-es-5" : "",
+    "header-es-6" : "",
+    "header-ssd-1": "",
+    "header-ssd-2": "",
+    "header-ssd-3": "",
+    "header-sr-1" : "",
+    "header-sr-2" : "",
+    "header-sr-3" : "",
+    "header-sr-4" : "",
+    "header-sr-5" : "",
+    "header-sr-6" : "",
+    "header-cce-1": "",
+    "header-cce-2": "",
+    "header-cce-3": "",
+    "header-cce-4": "",
     /* Legend */
     "legend-header" : "Legend", 
     "not-at-all"    : "Not at all",
