@@ -144,6 +144,32 @@ i18n_dict = {
     "ag98"         : "b. The governing body or the leaders who govern use the assessment process to identify specific improvement opportunities, define specific performance improvement goals, and include them in the plan for improvement.",
     "ag99"         : "c. The governing body or the leaders who govern continuously improve their own performance by working on their weak areas noticed in the assessment.",
     "ag100"        : "d. The governing body or the leaders who govern use their governance education in improving the organization’s performance.",
+    /* Question Headers */
+    "header-ca-1" ;
+    "header-ca-2" :
+    "header-ca-3" :
+    "header-ca-4" :
+    "header-ca-5" :
+    "header-ca-6" :
+    "header-es-1" :
+    "header-es-2" :
+    "header-es-3" :
+    "header-es-4" :
+    "header-es-5" :
+    "header-es-6" :
+    "header-ssd-1":
+    "header-ssd-2":
+    "header-ssd-3":
+    "header-sr-1" :
+    "header-sr-2" :
+    "header-sr-3" :
+    "header-sr-4" :
+    "header-sr-5" :
+    "header-sr-6" :
+    "header-cce-1":
+    "header-cce-2":
+    "header-cce-3":
+    "header-cce-4":
     /* Legend */
     "legend-header" : "Legend", 
     "not-at-all"    : "Not at all",

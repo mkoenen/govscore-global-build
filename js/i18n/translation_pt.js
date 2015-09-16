@@ -142,5 +142,57 @@ i18n_dict_pt = {
     "ag97"        : "a. O órgão de governação ou os líderes de governação realizam um processo formal para avaliarem regularmente o seu próprio desempenho.",
     "ag98"        : "b. O órgão de governação ou os líderes de governação usam o processo de avaliação periódica para identificar oportunidades de melhoria específicas, definir metas específicas de melhoria do desempenho, e incluí-las no plano de melhoria.",
     "ag99"        : "c. O órgão de governação ou os líderes de governação melhoram continuamente o seu próprio desempenho, trabalhando nas áreas mais fracas anotadas nas avaliações periódicas.",
-    "ag100"       : "d. O órgão de governação ou os líderes de governação usam os seus conhecimentos sobre governação para melhorarem o desempenho da organização.",  
+    "ag100"       : "d. O órgão de governação ou os líderes de governação usam os seus conhecimentos sobre governação para melhorarem o desempenho da organização.", 
+    /* Question Headers */
+    "header-ca-1" ;
+    "header-ca-2" :
+    "header-ca-3" :
+    "header-ca-4" :
+    "header-ca-5" :
+    "header-ca-6" :
+    "header-es-1" :
+    "header-es-2" :
+    "header-es-3" :
+    "header-es-4" :
+    "header-es-5" :
+    "header-es-6" :
+    "header-ssd-1":
+    "header-ssd-2":
+    "header-ssd-3":
+    "header-sr-1" :
+    "header-sr-2" :
+    "header-sr-3" :
+    "header-sr-4" :
+    "header-sr-5" :
+    "header-sr-6" :
+    "header-cce-1":
+    "header-cce-2":
+    "header-cce-3":
+    "header-cce-4":
+    /* Legend */
+    "legend-header" : "Legend", 
+    "not-at-all"    : "Not at all",
+    "minimally"     : "Minimally",
+    "partly"        : "Partly",
+    "mostly"        : "Mostly",
+    "completely"    : "Completely", 
+    /* Headers */
+    "how-to"        : "How to",
+    "gs-header"     : "Govscore",
+    "adv-header"    : "Advanced Govscore",
+    "accountability" : "Cultivating Accountability",
+    "stakeholders"  : "Engaging Stakeholders",
+    "direction"     : "Shared Strategic Direction",
+    "resources"     : "Stewarding Resources",
+    "enhancement"   : "Continuous Governance Enhancement",
+    "gs-res-header" : "Govscore Results",
+    /* Bottom Nav */
+    "adv"           : "Advanced",
+    "res"           : "Results",
+    /* Buttons */
+    "govscore-results" : "Assessment Completed<br>See Your Results",
+    "submit"        : "Submit",
+    /* Messages */
+    "check-answers" : "Please check your answers. You can only submit this form once.",
+    "no-results"    : "No results available at this time.", 
   };
