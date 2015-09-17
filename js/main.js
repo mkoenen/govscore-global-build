@@ -10,28 +10,6 @@ function init(){
 }
 
 
-//listen for click events      
-function setbuttons() {
-    document.getElementById('btnStore').addEventListener('click', validate, false);
-    document.getElementById('ag1Store').addEventListener('click', function(){ adv_validate(ag1data, 24, 0, ag1savelocal); });
-    document.getElementById('ag2Store').addEventListener('click', function(){ adv_validate(ag2data, 24, 24, ag2savelocal); });
-    document.getElementById('ag3Store').addEventListener('click', function(){ adv_validate(ag3data, 12, 48, ag3savelocal); });
-    document.getElementById('ag4Store').addEventListener('click', function(){ adv_validate(ag4data, 24, 60, ag4savelocal); });
-    document.getElementById('ag5Store').addEventListener('click', function(){ adv_validate(ag5data, 16, 84, ag5savelocal); });
-}
-
-/* Storage --------------------------------------------*/
-
-Storage.prototype.setObject = function(key, value) {
-    this.setItem(key, JSON.stringify(value));
-}
-
-Storage.prototype.getObject = function(key) {
-    var value = this.getItem(key);
-    return value && JSON.parse(value);
-}
-
-/* Globalization ---------------------------------------*/
 
 function checkLanguage() {
   navigator.globalization.getPreferredLanguage(
@@ -51,8 +29,8 @@ function translatenow(mylang) {
     alert('language: ' + mylang + ' again\n');
 
     if(mylang == "fr" ) {
-      $.getScript("js/i18n/translation_fr.js", function(){
-        $.i18n.load(i18n_dict_fr);
+      $.getScript("js/i18n/translation_en.js", function(){
+        $.i18n.load(i18n_dict);
         map_all();
       });
     }else if(mylang == "es") {
