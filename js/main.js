@@ -29,8 +29,8 @@ function translatenow(mylang) {
     alert('language: ' + mylang + ' again\n');
 
     if(mylang == "fr" ) {
-      $.getScript("js/i18n/translation_en.js", function(){
-        $.i18n.load(i18n_dict);
+      $.getScript("js/i18n/translation_fr.js", function(){
+        $.i18n.load(i18n_dict_fr);
         map_all();
       });
     }else if(mylang == "es") {
