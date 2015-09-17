@@ -763,7 +763,15 @@ function showResults(){
     if(storedResult){
         document.getElementById('gs-results').innerHTML = storedResult;
     }else{
-        document.getElementById('gs-results').innerHTML = "No Results Available.";
+        if(lang == "fr" ) {
+            document.getElementById('gs-results').innerHTML = "Aucun résultat disponible à l’heure actuelle.";
+        }else if(lang == "es" ) {
+            document.getElementById('gs-results').innerHTML = "No hay resultados disponibles en el momento.";
+        }else if(lang == "pt" ) {
+            document.getElementById('gs-results').innerHTML = "No Results Available in pt.";
+        }else{
+            document.getElementById('gs-results').innerHTML = "No Results Available Yet.";
+        } 
     }
 } 
 
