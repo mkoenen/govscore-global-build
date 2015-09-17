@@ -170,12 +170,12 @@ i18n_dict_fr = {
     "header-cce-3": "3. Organisation d’une orientation en matière de gouvernance et formation continue dans ce domaine",
     "header-cce-4": "4. Conduite d’évaluations régulières en matière de gouvernance et efforts pour une amélioration continue de la gouvernance",
      /* Legend */
-    "legend-header" : "Légende", 
+    "legend-header" : "Légende",
     "not-at-all"    : "Pas du tout",
     "minimally"     : "Minimal",
     "partly"        : "Partiellement",
     "mostly"        : "Pour la plupart",
-    "completely"    : "Complètement", 
+    "completely"    : "Complètement",
     /* Headers */
     "how-to"        : "Comment procéder",
     "gs-header"     : "Govscore",
@@ -194,5 +194,5 @@ i18n_dict_fr = {
     "submit"        : "Envoyer",
     /* Messages */
     "check-answers" : "Veuillez vérifier vos réponses. Vous ne pouvez envoyer ce formulaire qu’une fois.",
-    "no-results"    : "Aucun résultat disponible à l’heure actuelle.",
-    };
+    "no-results"    : "Aucun résultat disponible à l’heure actuelle."
+};
