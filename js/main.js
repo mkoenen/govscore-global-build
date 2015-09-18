@@ -9,8 +9,27 @@ function init(){
     document.addEventListener("deviceready", showResultsButtons, false);
 }
 
+//listen for click events      
+function setbuttons() {
+    document.getElementById('btnStore').addEventListener('click', validate, false);
+    document.getElementById('ag1Store').addEventListener('click', function(){ adv_validate(ag1data, 24, 0, ag1savelocal); });
+    document.getElementById('ag2Store').addEventListener('click', function(){ adv_validate(ag2data, 24, 24, ag2savelocal); });
+    document.getElementById('ag3Store').addEventListener('click', function(){ adv_validate(ag3data, 12, 48, ag3savelocal); });
+    document.getElementById('ag4Store').addEventListener('click', function(){ adv_validate(ag4data, 24, 60, ag4savelocal); });
+    document.getElementById('ag5Store').addEventListener('click', function(){ adv_validate(ag5data, 16, 84, ag5savelocal); });
+}
 
+/* Local Storage ----------------------------------*/
+Storage.prototype.setObject = function(key, value) {
+    this.setItem(key, JSON.stringify(value));
+}
 
+Storage.prototype.getObject = function(key) {
+    var value = this.getItem(key);
+    return value && JSON.parse(value);
+}
+
+/* Language ----------------------------------------*/
 function checkLanguage() {
   navigator.globalization.getPreferredLanguage(
     function (language) {
@@ -611,12 +630,11 @@ function savelocal() {
     var userdata, email, gsdate, username;
 
     username = document.getElementById("username").value;
-    email = document.getElementById("email").value;
-    organization = document.getElementById("organization").value;
+    email = document.gsForm.email.value;
     gsdate  = formatDate(new Date());
 
     //construct the json array for user data and add to local storage
-    gsdata = {'username': username, 'email': email, 'organization': organization, 'gsdate': gsdate, 'answers':[-1]};
+    gsdata = {'username': username, 'email': email, 'gsdate': gsdate, 'answers':[-1]};
     gsdata = getinputs(gsdata,1,25,"g");
     localStorage.setObject('gsdata', gsdata);   
     calcResults();
@@ -628,8 +646,8 @@ function savelocal() {
 function saveServer() {
     var gsdata;
     //get the data from local storage
-    gsdata = localStorage.getObject('gsdata');
-    saveToServer("http://mshlmg.wpengine.com/store-gs.php", gsdata, "gsSaved");
+    ggsdata = localStorage.getObject('gsdata');
+    saveToServer("http://mshlmg.wpengine.com/store-gg-initial.php", ggsdata, "gsSaved");
 }
 
 /* Saving Advanced Govscore Data ----------------------------------------*/
@@ -685,26 +703,26 @@ function ag5savelocal() {
 /* Save on Server */
 
 function ag1saveServer() {        
-    ag1data = localStorage.getObject('ag1data');
-    saveToServer("http://mshlmg.wpengine.com/store-ag.php", ag1data, "ag1Saved");        
+    agg1data = localStorage.getObject('ag1data');
+    saveToServer("http://mshlmg.wpengine.com/store-gg-adv.php", agg1data, "ag1Saved");        
 }
 function ag2saveServer() {
-    ag2data = localStorage.getObject('ag2data');
-    saveToServer("http://mshlmg.wpengine.com/store-ag.php", ag2data, "ag2Saved");       
+    agg2data = localStorage.getObject('ag2data');
+    saveToServer("http://mshlmg.wpengine.com/store-gg-adv.php", agg2data, "ag2Saved");       
 }
 function ag3saveServer() {
 
-    ag3data = localStorage.getObject('ag3data');
-    saveToServer("http://mshlmg.wpengine.com/store-ag.php", ag3data, "ag3Saved");
+    agg3data = localStorage.getObject('ag3data');
+    saveToServer("http://mshlmg.wpengine.com/store-gg-adv.php", agg3data, "ag3Saved");
 
 }
 function ag4saveServer() {    
-    ag4data = localStorage.getObject('ag4data');
-    saveToServer("http://mshlmg.wpengine.com/store-ag.php", ag4data, "ag4Saved");
+    agg4data = localStorage.getObject('ag4data');
+    saveToServer("http://mshlmg.wpengine.com/store-gg-adv.php", agg4data, "ag4Saved");
 }
 function ag5saveServer() {
-    ag5data = localStorage.getObject('ag5data');
-    saveToServer("http://mshlmg.wpengine.com/store-ag.php", ag5data, "ag5Saved");   
+    agg5data = localStorage.getObject('ag5data');
+    saveToServer("http://mshlmg.wpengine.com/store-gg-adv.php", agg5data, "ag5Saved");   
 } 
 
 
@@ -870,14 +888,14 @@ function calcResults() {
         mlevel = findLevel(totalScore);
 
         //list each area with the score
-        var res_en = "<h2 id='gs-assessment'>Govscore Assessment</h2><p id='your-assessment'>Yyou assessed your organization a follows: </p>";
+        var res_en = "<h2 id='gs-assessment'>Govscore Assessment</h2><p id='your-assessment'>You assessed your organization a follows: </p>";
         res_en += "<div id=\"accountability\"><h3 id='c-a'>.Cultivating Accountability</h3><p>" + accScore + " <span>out of 24 points</span> - " + accPercent + "%.</p></div>";
         res_en += "<div id=\"stakeholders\"><h3 id='stake'>.Engaging Stakeholders</h3><p>" + stakeScore + " <span>out of 12 points</span> - " + stakePercent + "%.</p></div>";
         res_en += "<div id=\"direction\"><h3 id='dir'>.Shared Strategic Direction</h3><p>" + dirScore + " <span>out of 16 points</span> - " + dirPercent + "%.</p></div>";
         res_en += "<div id=\"resources\"><h3 id='res'>.Stewarding Resources</h3><p>" + resScore + " <span>out of 24 points</span> - " + resPercent + "%.</p></div>";
         res_en += "<div id=\"enhancement\"><h3 id='enh'>.Continuous Governance Enhancement</h3><p>" + enhScore + " <span>out of 24 points</span> - " + enhPercent + "%.</p></div>";
         res_en += "<div id=\"total\"><h3>Total Score</h3><p>" + totalScore +" points out of 100</p><p>This places your organization at:</p><p class=\"level\">" + mlevel + "</p></div>";
-        res_en += "<div id=\"link\"><p>Learn more at <a href=\"http://govscoreapp.net/\">govscoreapp.net</a></p><p><span>Enter the organization code </span> " + gsdata.organization + " <span> to see how your organization was evaluated collectively.</span></p></div>";
+        res_en += "<div id=\"link\"><p>Learn more at <a href=\"http://govscoreapp.net/\">govscoreapp.net</a></p><p><span> Enter your organization name to see how your organization was evaluated collectively.</span></p></div>";
         //document.getElementById('gs-results').innerHTML = res;
         
         var res_fr = "<h2 id='gs-assessment'>Évaluation GovScore</h2><p id='your-assessment'>Vous avez évalué votre organisation de la manière suivante: </p>";
