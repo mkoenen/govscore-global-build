@@ -311,15 +311,24 @@ function map_all(){
 
 function validate(event) {
   if(gsdata){
-        notification('You previously finished this assessment. Please check your results.', goTo(), "Already Completed", "OK");
+        if(lang == "fr" ) {
+                notification('Vous avez déjà rempli cette évaluation. Veuillez consulter vos résultats.', goTo(), "Déjà complété", "OK");
+            }else if(lang == "es" ) {
+                notification('Usted terminó esta evaluación previamente. Por favor verifique sus resultados.', goTo(), "Ya está completada", "OK");
+            }else if(lang == "pt" ) {
+                notification('Você concluiu esta avaliação anteriormente. Favor verificar seus resultados.', goTo(), "Já concluído", "OK");
+            }else{
+                notification('You previously finished this assessment. Please check your results.', goTo(), "Already Completed", "OK");
+            }
+        
   }else{  
       if( document.gsForm.username.value === "" ) {
             if(lang == "fr" ) {
                 notification(  "Veuillez saisir votre nom complet." );
             }else if(lang == "es" ) {
-                notification(  "Please enter your full name." );
+                notification(  "Por favor ingrese su nombre y apellido." );
             }else if(lang == "pt" ) {
-                notification(  "Please enter your full name." );
+                notification(  "Favor digitar seu nome completo." );
             }else{
                 notification(  "Please enter your full name." );
             }
@@ -332,11 +341,11 @@ function validate(event) {
             if(lang == "fr" ) {
                 notification(  "Le courriel que vous avez saisi ne correspond pas. Veuillez réessayer." );
             }else if(lang == "es" ) {
-                notification(  "Please enter your full name." );
+                notification(  "Los datos enviados por email no son compatibles. Por favor intente nuevamente. " );
             }else if(lang == "pt" ) {
-                notification(  "Please enter your full name." );
+                notification(  "Os emails informados não coincidem. Favor tentar novamente." );
             }else{
-                notification(  "Email entries don't match. Please try again" );
+                notification(  "Email entries don't match. Please try again." );
             }
             
             document.gsForm.email.focus();
@@ -345,11 +354,11 @@ function validate(event) {
       }
       if( document.gsForm.email.value === "" ) {
             if(lang == "fr" ) {
-                notification(  "Veuillez saisir votre adresse e-mail." );
+                notification(  "Veuillez saisir votre adresse e-mail!" );
             }else if(lang == "es" ) {
-                notification(  "Please enter your full name." );
+                notification(  " Por favor ingrese su dirección de email!" );
             }else if(lang == "pt" ) {
-                notification(  "Please enter your full name." );
+                notification(  "Favor informar seu endereço de email!" );
             }else{
                 notification(  "Please enter your email address!" );
             }
@@ -374,11 +383,11 @@ function validate(event) {
                 if(lang == "fr" ) {
                     notification(  "Veuillez répondre à toutes les questions." );
                 }else if(lang == "es" ) {
-                    notification(  "Please enter your full name." );
+                    notification(  " Por favor responda todas las preguntas." );
                 }else if(lang == "pt" ) {
-                    notification(  "Please enter your full name." );
+                    notification(  "Favor responder a todas as perguntas." );
                 }else{
-                     notification(  "Please answer all questions");
+                     notification(  "Please answer all questions.");
                 }
              
               event.preventDefault();
@@ -398,11 +407,11 @@ function validateEmail() {
         if(lang == "fr" ) {
             notification(  "Veuillez saisir votre adresse e-mail exacte." );
         }else if(lang == "es" ) {
-            notification(  "Please enter your full name." );
+            notification(  " Por favor ingrese su dirección de email correcta." );
         }else if(lang == "pt" ) {
-            notification(  "Please enter your full name." );
+            notification(  "Favor informar seu endereço de email correto." );
         }else{
-            notification( "Please enter a correct email address");
+            notification( "Please enter a correct email address.");
         }
        
        document.gsForm.email.focus();
@@ -417,9 +426,9 @@ function adv_validate( savedData, length, keyaug, savefunc){
         if(lang == "fr" ) {
             notification(  "Vous avez déjà rempli cette évaluation. Veuillez consulter vos résultats.", goTo()," Déjà complété", "OK" );
         }else if(lang == "es" ) {
-            notification(  "Please enter your full name." );
+            notification(  " Usted terminó esta evaluación previamente. Por favor verifique sus resultados.", goTo(), "Ya está completada", "OK" );
         }else if(lang == "pt" ) {
-            notification(  "Please enter your full name." );
+            notification(  "Você concluiu esta avaliação anteriormente. Favor verificar seus resultados.", goTo(), "Já concluído", "OK" );
         }else{
             nnotification("You previously finished this assessment. Please check your results.", goTo(), "Already Completed", "OK");
         }
@@ -428,9 +437,9 @@ function adv_validate( savedData, length, keyaug, savefunc){
         if(lang == "fr" ) {
             notification(  " Veuillez procéder à l’évaluation GovScore initiale avant d’accéder aux questionnaires d’évaluation approfondie.", goTo(),"Alert", "OK" );
         }else if(lang == "es" ) {
-            notification(  "Please enter your full name." );
+            notification(  "Por favor complete la evaluación inicial de govscore antes de responder los cuestionarios de Advanced Govscore.", goToGs(), "Alert", "OK" );
         }else if(lang == "pt" ) {
-            notification(  "Please enter your full name." );
+            notification(  "Favor concluir a avaliação Govscore inicial, antes de passar para os questionários do Govscore Avançado.", goToGs(), "Alert", "OK" );
         }else{
             notification('Please complete the initial Govscore assessment before moving on to the Advanced Govscore questionnaires.', goToGs(), "Alert", "OK");
         }
@@ -445,9 +454,9 @@ function adv_validate( savedData, length, keyaug, savefunc){
                 if(lang == "fr" ) {
                     notification(  "Veuillez répondre à toutes les questions." );
                 }else if(lang == "es" ) {
-                    notification(  "Please enter your full name." );
+                    notification(  "Por favor responda todas las preguntas." );
                 }else if(lang == "pt" ) {
-                    notification(  "Please enter your full name." );
+                    notification(  "Favor responder a todas as perguntas." );
                 }else{
                     notification( "Please answer all questions" );
                 }
@@ -534,7 +543,16 @@ function checkConnection(whichfunction) {
                 break;
         }
     }else{
-        notification("Your answers have been stored on your device. They will be saved to our server when you get reconnected to the internet.", goTo(), "No Internet Connection", "OK");     
+        if(lang == "fr" ) {
+                    notification(" Vos réponses ont été conservées sur votre appareil. Elles seront sauvegardées sur notre serveur lorsque vous serez à nouveau connectés à l’Internet.", goTo(), "Pas de connexion à l’Internet", "OK");
+                }else if(lang == "es" ) {
+                    notification(" Sus respuestas han sido guardadas en su dispositivo. Éstas serán almacenadas en su servidor cuando usted vuelva a ingresar al Internet.", goTo(), "No hay conexión a Internet.", "OK");
+                }else if(lang == "pt" ) {
+                    notification("Suas respostas foram armazenadas no seu dispositivo. Serão guardadas em nosso servidor quando se reconectar à Internet.", goTo(), "Sem conexão com Internet", "OK");
+                }else{
+                    notification("Your answers have been stored on your device. They will be saved to our server when you get reconnected to the internet.", goTo(), "No Internet Connection", "OK");
+                }
+             
     }
 }
 
@@ -786,7 +804,7 @@ function showResults(){
         }else if(lang == "es" ) {
             document.getElementById('gs-results').innerHTML = "No hay resultados disponibles en el momento.";
         }else if(lang == "pt" ) {
-            document.getElementById('gs-results').innerHTML = "No Results Available in pt.";
+            document.getElementById('gs-results').innerHTML = "Nenhum resultado disponível ainda.";
         }else{
             document.getElementById('gs-results').innerHTML = "No Results Available Yet.";
         } 
@@ -815,31 +833,31 @@ function calcResults() {
                 if(lang == "fr"){
                     level = "Besoin évident de développement de la gouvernance (premier niveau/4)";
                 }else if(lang == "es") {
-                    level = "";
+                    level = " Necesidad clara de desarrollo de la gobernanza (primer nivel/4)";
                 }else if(lang == "pt") {
-                    level = "";
+                    level = "Necessidade clara de desenvolvimento da governação (primeiro nível/4)";
                 }else{
-                level = "<span>Clear need of governance development (first level/4).</span>";
+                level = "Clear need of governance development (first level/4)";
                 }
                 break;
             case( score > 25 && score <= 50 ):
                 if(lang == "fr"){
                     level = " Niveau de gouvernance élémentaire (deuxième niveau/4)";
                 }else if(lang == "es") {
-                    level = "";
+                    level = " Nivel básico de gobernanza (segundo nivel/4)";
                 }else if(lang == "pt") {
-                    level = "";
+                    level = "Nível básico de governação (segundo nível/4)";
                 }else{
-                    level = "<span>Basic level of governance (second level/4)</span>";
+                    level = "Basic level of governance (second level/4)";
                 }
                 break;
             case( score > 50 && score <= 75 ):
                 if(lang == "fr"){
                     level = " Gouvernance dynamique et guidée par des objectifs (troisième niveau/4)";
                 }else if(lang == "es") {
-                    level = "";
+                    level = " Gobernanza basada en metas y gobernanza dinámica (tercer nivel/4)";
                 }else if(lang == "pt") {
-                    level = "";
+                    level = "Governação dinâmica e voltada a metas (terceiro nível/4)";
                 }else{
                     level = "Goal-Driven and dynamic governance (third level/4)";
                 }
@@ -848,9 +866,9 @@ function calcResults() {
                 if(lang == "fr"){
                     level = " Gouvernance transformatrice (niveau le plus élevé/4)";
                 }else if(lang == "es") {
-                    level = "";
+                    level = " Gobernanza transformadora (nivel más alto /4)";
                 }else if(lang == "pt") {
-                    level = "";
+                    level = "Governação transformadora (nível mais alto/4)";
                 }else{ 
                     level = "Transformational governance (highest level/4)";
                 }
@@ -888,46 +906,49 @@ function calcResults() {
         mlevel = findLevel(totalScore);
 
         //list each area with the score
-        var res_en = "<h2 id='gs-assessment'>Govscore Assessment</h2><p id='your-assessment'>You assessed your organization a follows: </p>";
-        res_en += "<div id=\"accountability\"><h3 id='c-a'>.Cultivating Accountability</h3><p>" + accScore + " <span>out of 24 points</span> - " + accPercent + "%.</p></div>";
-        res_en += "<div id=\"stakeholders\"><h3 id='stake'>.Engaging Stakeholders</h3><p>" + stakeScore + " <span>out of 12 points</span> - " + stakePercent + "%.</p></div>";
-        res_en += "<div id=\"direction\"><h3 id='dir'>.Shared Strategic Direction</h3><p>" + dirScore + " <span>out of 16 points</span> - " + dirPercent + "%.</p></div>";
-        res_en += "<div id=\"resources\"><h3 id='res'>.Stewarding Resources</h3><p>" + resScore + " <span>out of 24 points</span> - " + resPercent + "%.</p></div>";
-        res_en += "<div id=\"enhancement\"><h3 id='enh'>.Continuous Governance Enhancement</h3><p>" + enhScore + " <span>out of 24 points</span> - " + enhPercent + "%.</p></div>";
-        res_en += "<div id=\"total\"><h3>Total Score</h3><p>" + totalScore +" points out of 100</p><p>This places your organization at:</p><p class=\"level\">" + mlevel + "</p></div>";
-        res_en += "<div id=\"link\"><p>Learn more at <a href=\"http://govscoreapp.net/\">govscoreapp.net</a></p><p><span> Enter your organization name to see how your organization was evaluated collectively.</span></p></div>";
+        var res_en = "<h2>Govscore Assessment</h2><p>You assessed your organization a follows: </p>";
+        res_en += "<div id=\"accountability\"><h3>Cultivating Accountability</h3><p>" + accScore + " <span>out of 24 points</span> - " + accPercent + "%.</p></div>";
+        res_en += "<div id=\"stakeholders\"><h3>Engaging Stakeholders</h3><p>" + stakeScore + " <span>out of 12 points</span> - " + stakePercent + "%.</p></div>";
+        res_en += "<div id=\"direction\"><h3>.Shared Strategic Direction</h3><p>" + dirScore + " <span>out of 16 points</span> - " + dirPercent + "%.</p></div>";
+        res_en += "<div id=\"resources\"><h3>.Stewarding Resources</h3><p>" + resScore + " <span>out of 24 points</span> - " + resPercent + "%.</p></div>";
+        res_en += "<div id=\"enhancement\"><h3>.Continuous Governance Enhancement</h3><p>" + enhScore + " <span>out of 24 points</span> - " + enhPercent + "%.</p></div>";
+        res_en += "<div id=\"total\"><h3>Total Score</h3><p>" + totalScore +" points out of 100</p><p>This places your organization at:</p><p>" + mlevel + "</p></div>";
+        res_en += "<div id=\"link\"><p>Learn more at <a href=\"http://govscoreapp.net/\">govscoreapp.net</a></p>";
         //document.getElementById('gs-results').innerHTML = res;
         
-        var res_fr = "<h2 id='gs-assessment'>Évaluation GovScore</h2><p id='your-assessment'>Vous avez évalué votre organisation de la manière suivante: </p>";
-        res_fr += "<div id=\"accountability\"><h3 id='c-a'>Cultiver le Respect des Engagements</h3><p>" + accScore + " <span> sur 24 points</span> - " + accPercent + "%.</p></div>";
-        res_fr += "<div id=\"stakeholders\"><h3 id='stake'>Engagement des Parties Prenantes</h3><p>" + stakeScore + " <span> sur 12 points</span> - " + stakePercent + "%.</p></div>";
-        res_fr += "<div id=\"direction\"><h3 id='dir'>Orientation Stratégique Commune</h3><p>" + dirScore + " <span> sur 16 points</span> - " + dirPercent + "%.</p></div>";
-        res_fr += "<div id=\"resources\"><h3 id='res'>Bonne Intendance des Ressources</h3><p>" + resScore + " <span>sur 24 points</span> - " + resPercent + "%.</p></div>";
-        res_fr += "<div id=\"enhancement\"><h3 id='enh'>Amélioration Continue de la Gouvernance</h3><p>" + enhScore + " <span>sur 24 points</span> - " + enhPercent + "%.</p></div>";
-        res_fr += "<div id=\"total\"><h3>Total Score</h3><p>" + totalScore +" points sur 100</p><p>This places your organization at:</p><p class=\"level\">" + mlevel + "</p></div>";
-        res_fr += "<div id=\"link\"><p> Consultez <a href='http://govscoreapp.net/'>govscoreapp.net </a>pour en savoir plus.</p><p><span> Saisissez le code organisationnel </span> " + gsdata.organization + " <span> pour voir comment votre organisation a été évaluée collectivement.</span></p></div>";
+        var res_fr = "<h2>Évaluation GovScore</h2><p>Vous avez évalué votre organisation de la manière suivante: </p>";
+        res_fr += "<div id=\"accountability\"><h3>Cultiver le Respect des Engagements</h3><p>" + accScore + " <span> sur 24 points</span> - " + accPercent + "%.</p></div>";
+        res_fr += "<div id=\"stakeholders\"><h3>Engagement des Parties Prenantes</h3><p>" + stakeScore + " <span> sur 12 points</span> - " + stakePercent + "%.</p></div>";
+        res_fr += "<div id=\"direction\"><h3>Orientation Stratégique Commune</h3><p>" + dirScore + " <span> sur 16 points</span> - " + dirPercent + "%.</p></div>";
+        res_fr += "<div id=\"resources\"><h3>Bonne Intendance des Ressources</h3><p>" + resScore + " <span>sur 24 points</span> - " + resPercent + "%.</p></div>";
+        res_fr += "<div id=\"enhancement\"><h3>Amélioration Continue de la Gouvernance</h3><p>" + enhScore + " <span>sur 24 points</span> - " + enhPercent + "%.</p></div>";
+        res_fr += "<div id=\"total\"><h3>Score Total</h3><p>" + totalScore +" points sur 100</p><p> Ces résultats placent votre organisation au: </p><p>" + mlevel + "</p></div>";
+        res_fr += "<div id=\"link\"><p>Consultez <a href='http://govscoreapp.net/'>govscoreapp.net </a>pour en savoir plus.</p>";
 
-        var res_es = "<h2 id='gs-assessment'>Évaluation GovScore</h2><p id='your-assessment'>Vous avez évalué votre organisation de la manière suivante: </p>";
-        res_es += "<div id=\"accountability\"><h3 id='c-a'>Cultiver le Respect des Engagements</h3><p>" + accScore + " <span> sur 24 points</span> - " + accPercent + "%.</p></div>";
-        res_es += "<div id=\"stakeholders\"><h3 id='stake'>Engagement des Parties Prenantes</h3><p>" + stakeScore + " <span> sur 12 points</span> - " + stakePercent + "%.</p></div>";
-        res_es += "<div id=\"direction\"><h3 id='dir'>Orientation Stratégique Commune</h3><p>" + dirScore + " <span> sur 16 points</span> - " + dirPercent + "%.</p></div>";
-        res_es += "<div id=\"resources\"><h3 id='res'>Bonne Intendance des Ressources</h3><p>" + resScore + " <span>sur 24 points</span> - " + resPercent + "%.</p></div>";
-        res_es += "<div id=\"enhancement\"><h3 id='enh'>Amélioration Continue de la Gouvernance</h3><p>" + enhScore + " <span>sur 24 points</span> - " + enhPercent + "%.</p></div>";
-        res_es += "<div id=\"total\"><h3>Total Score</h3><p>" + totalScore +" points sur 100</p><p>This places your organization at:</p><p class=\"level\">" + mlevel + "</p></div>";
-        res_es += "<div id=\"link\"><p> Consultez <a href='http://govscoreapp.net/'>govscoreapp.net </a>pour en savoir plus.</p><p><span> Saisissez le code organisationnel </span> " + gsdata.organization + " <span> pour voir comment votre organisation a été évaluée collectivement.</span></p></div>";
+        var res_es = "<h2>Evaluación Govscore</h2><p>Usted evaluó a su organización como sigue: </p>";
+        res_es += "<div id=\"accountability\"><h3>Cultivar la Rendición de Cuentas</h3><p>" + accScore + " <span>de 24 puntos</span> - " + accPercent + "%.</p></div>";
+        res_es += "<div id=\"stakeholders\"><h3>Involucrar a los Grupos de Interés </h3><p>" + stakeScore + " <span>de 12 puntos</span> - " + stakePercent + "%.</p></div>";
+        res_es += "<div id=\"direction\"><h3>Dirección Estratégica Compartida</h3><p>" + dirScore + " <span>de 16 puntos</span> - " + dirPercent + "%.</p></div>";
+        res_es += "<div id=\"resources\"><h3>Gestión de los Recursos</h3><p>" + resScore + " <span>de 24 puntos</span> - " + resPercent + "%.</p></div>";
+        res_es += "<div id=\"enhancement\"><h3>Mejoramiento Continuo de la Gobernanza</h3><p>" + enhScore + " <span>de 24 puntos</span> - " + enhPercent + "%.</p></div>";
+        res_es += "<div id=\"total\"><h3>Puntuación Total</h3><p>" + totalScore +" de 100 puntos</p><p>Esto coloca a su organización en el:</p><p class=\"level\">" + mlevel + "</p></div>";
+        res_es += "<div id=\"link\"><p>Aprender más en <a href='http://govscoreapp.net/'>govscoreapp.net </a>.</p>";
 
-        var res_pt = "<h2 id='gs-assessment'>Évaluation GovScore</h2><p id='your-assessment'>Vous avez évalué votre organisation de la manière suivante: </p>";
-        res_pt += "<div id=\"accountability\"><h3 id='c-a'>Cultiver le Respect des Engagements</h3><p>" + accScore + " <span> sur 24 points</span> - " + accPercent + "%.</p></div>";
-        res_pt += "<div id=\"stakeholders\"><h3 id='stake'>Engagement des Parties Prenantes</h3><p>" + stakeScore + " <span> sur 12 points</span> - " + stakePercent + "%.</p></div>";
-        res_pt += "<div id=\"direction\"><h3 id='dir'>Orientation Stratégique Commune</h3><p>" + dirScore + " <span> sur 16 points</span> - " + dirPercent + "%.</p></div>";
-        res_pt += "<div id=\"resources\"><h3 id='res'>Bonne Intendance des Ressources</h3><p>" + resScore + " <span>sur 24 points</span> - " + resPercent + "%.</p></div>";
-        res_pt += "<div id=\"enhancement\"><h3 id='enh'>Amélioration Continue de la Gouvernance</h3><p>" + enhScore + " <span>sur 24 points</span> - " + enhPercent + "%.</p></div>";
-        res_pt += "<div id=\"total\"><h3>Total Score</h3><p>" + totalScore +" points sur 100</p><p>This places your organization at:</p><p class=\"level\">" + mlevel + "</p></div>";
-        res_pt += "<div id=\"link\"><p> Consultez <a href='http://govscoreapp.net/'>govscoreapp.net </a>pour en savoir plus.</p><p><span> Saisissez le code organisationnel </span> " + gsdata.organization + " <span> pour voir comment votre organisation a été évaluée collectivement.</span></p></div>";
+        var res_pt = "<h2>Avaliação do Govscore</h2><p>Você avaliou sua organização da seguinte forma: </p>";
+        res_pt += "<div id=\"accountability\"><h3>Cultivo da Responsabilidade de Prestação de Contas</h3><p>" + accScore + " <span>de um total de 24 pontos</span> - " + accPercent + "%.</p></div>";
+        res_pt += "<div id=\"stakeholders\"><h3>Engajamento das Partes Interessadas</h3><p>" + stakeScore + " <span>de um total de 12 pontos</span> - " + stakePercent + "%.</p></div>";
+        res_pt += "<div id=\"direction\"><h3>Direcção Estratégica Compartilhada</h3><p>" + dirScore + " <span>de um total de 16 pontos</span> - " + dirPercent + "%.</p></div>";
+        res_pt += "<div id=\"resources\"><h3>Administração responsável dos recursos</h3><p>" + resScore + " <span>de um total de 24 pontos</span> - " + resPercent + "%.</p></div>";
+        res_pt += "<div id=\"enhancement\"><h3>Melhoria contínua da governação</h3><p>" + enhScore + " <span>de um total de 24 pontos</span> - " + enhPercent + "%.</p></div>";
+        res_pt += "<div id=\"total\"><h3>Pontuação total</h3><p>" + totalScore +" de um total de 100 pontos</p><p>Isto situa sua organização no: </p><p class=\"level\">" + mlevel + "</p></div>";
+        res_pt += "<div id=\"link\"><p>Obtenha mais informações em <a href='http://govscoreapp.net'>govscoreapp.net</a>.</p>";
     }
 
     if(ag1data || ag2data || ag3data || ag4data || ag5data ){
         res_en += "<h2>Advanced Govscore</h2>";
+        res_fr += "<h2>Évaluation GovScore Approfondie</h2>";
+        res_es += "<h2>Govscore Avançado</h2>";
+        res_pt += "<h2>GovScore Avançada</h2>";
 
         function getAgResults(dataset,resSet,ansnums) {
             var resSet = 0;
@@ -957,34 +978,34 @@ function calcResults() {
         ag5level = findLevel(ag5percent);
         
         if(ag1results >= 0){
-            res_en += "<div id=\"adv-govscore\"><h3>Cultivating Accountability</h3><p>" + ag1results + " <span>out of 24</span> - " + ag1percent + "%</p><p id='place-at'>This places your organization at:</p><p>" + ag1level + "</p></div>";
-            res_fr += "<div id=\"adv-govscore\"><h3>Cultiver le Respect des Engagements</h3><p>" + ag1results + " <span>sur 24</span> - " + ag1percent + "%</p><p id='place-at'>Ces résultats placent votre organisation au:</p><p>" + ag1level + "</p></div>";
-            res_es += "<div id=\"adv-govscore\"><h3>Cultivating Accountability</h3><p>" + ag1results + " <span>out of 24</span> - " + ag1percent + "%</p><p id='place-at'>This places your organization at:</p><p>" + ag1level + "</p></div>";
-            res_pt += "<div id=\"adv-govscore\"><h3>Cultivating Accountability</h3><p>" + ag1results + " <span>out of 24</span> - " + ag1percent + "%</p><p id='place-at'>This places your organization at:</p><p>" + ag1level + "</p></div>";
+            res_en += "<div id=\"adv-govscore\"><h3>Cultivating Accountability</h3><p>" + ag1results + " <span>out of 24</span> - " + ag1percent + "%</p><p>This places your organization at:</p><p>" + ag1level + "</p></div>";
+            res_fr += "<div id=\"adv-govscore\"><h3>Cultiver le Respect des Engagements</h3><p>" + ag1results + " <span>sur 24</span> - " + ag1percent + "%</p><p>Ces résultats placent votre organisation au:</p><p>" + ag1level + "</p></div>";
+            res_es += "<div id=\"adv-govscore\"><h3>Cultivar la Rendición de Cuentas</h3><p>" + ag1results + " <span> de 24</span> - " + ag1percent + "%</p><p>Esto coloca a su organización en el:</p><p>" + ag1level + "</p></div>";
+            res_pt += "<div id=\"adv-govscore\"><h3>Cultivo da Responsabilidade de Prestação de Contas</h3><p>" + ag1results + " <span>de um total de 24</span> - " + ag1percent + "%</p><p>Isto situa sua organização no:</p><p>" + ag1level + "</p></div>";
         }
         if(ag2results >= 0){
-            res_en += "<div id=\"adv-govscore\"><h3>Engaging Stakeholders</h3><p>" + ag2results + " <span>out of 24</span> - " + ag2percent + "%</p><p id='place-at'>This places your organization at:</p><p>" + ag2level + "</p></div>";
-            res_fr += "<div id=\"adv-govscore\"><h3>Engagement des Parties Prenantes</h3><p>" + ag2results + " <span>sur 24</span> - " + ag2percent + "%</p><p id='place-at'>Ces résultats placent votre organisation au:</p><p>" + ag2level + "</p></div>";
-            res_es += "<div id=\"adv-govscore\"><h3>Engaging Stakeholders</h3><p>" + ag2results + " <span>out of 24</span> - " + ag2percent + "%</p><p id='place-at'>This places your organization at:</p><p>" + ag2level + "</p></div>";
-            res_pt += "<div id=\"adv-govscore\"><h3>Engaging Stakeholders</h3><p>" + ag2results + " <span>out of 24</span> - " + ag2percent + "%</p><p id='place-at'>This places your organization at:</p><p>" + ag2level + "</p></div>";
+            res_en += "<div id=\"adv-govscore\"><h3>Engaging Stakeholders</h3><p>" + ag2results + " <span>out of 24</span> - " + ag2percent + "%</p><p>This places your organization at:</p><p>" + ag2level + "</p></div>";
+            res_fr += "<div id=\"adv-govscore\"><h3>Engagement des Parties Prenantes</h3><p>" + ag2results + " <span>sur 24</span> - " + ag2percent + "%</p><p>Ces résultats placent votre organisation au:</p><p>" + ag2level + "</p></div>";
+            res_es += "<div id=\"adv-govscore\"><h3>Involucrar a los Grupos de Interés </h3><p>" + ag2results + " <span> de 24</span> - " + ag2percent + "%</p><p>Esto coloca a su organización en el:</p><p>" + ag2level + "</p></div>";
+            res_pt += "<div id=\"adv-govscore\"><h3>Engajamento das Partes Interessadas</h3><p>" + ag2results + " <span>de um total de 24</span> - " + ag2percent + "%</p><p>Isto situa sua organização no:</p><p>" + ag2level + "</p></div>";
         }
         if(ag3results >= 0){
-            res_en += "<div id=\"adv-govscore\"><h3>Shared Strategic Direction</h3><p>" + ag3results + " <span>out of 12</span> - " + ag3percent + "%</p><p id='place-at'>This places your organization at:</p><p>" + ag3level + "</p></div>";
-            res_fr += "<div id=\"adv-govscore\"><h3>Orientation Stratégique Commune</h3><p>" + ag3results + " <span>sur 12</span> - " + ag3percent + "%</p><p id='place-at'>Ces résultats placent votre organisation au </p><p>" + ag3level + "</p></div>";
-            res_es += "<div id=\"adv-govscore\"><h3>Shared Strategic Direction</h3><p>" + ag3results + " <span>out of 12</span> - " + ag3percent + "%</p><p id='place-at'>This places your organization at:</p><p>" + ag3level + "</p></div>";
-            res_pt += "<div id=\"adv-govscore\"><h3>Shared Strategic Direction</h3><p>" + ag3results + " <span>out of 12</span> - " + ag3percent + "%</p><p id='place-at'>This places your organization at:</p><p>" + ag3level + "</p></div>";
+            res_en += "<div id=\"adv-govscore\"><h3>Shared Strategic Direction</h3><p>" + ag3results + " <span>out of 12</span> - " + ag3percent + "%</p><p>This places your organization at:</p><p>" + ag3level + "</p></div>";
+            res_fr += "<div id=\"adv-govscore\"><h3>Orientation Stratégique Commune</h3><p>" + ag3results + " <span>sur 12</span> - " + ag3percent + "%</p><p>Ces résultats placent votre organisation au </p><p>" + ag3level + "</p></div>";
+            res_es += "<div id=\"adv-govscore\"><h3>Dirección Estratégica Compartida</h3><p>" + ag3results + " <span> de 12</span> - " + ag3percent + "%</p><p>Esto coloca a su organización en el:</p><p>" + ag3level + "</p></div>";
+            res_pt += "<div id=\"adv-govscore\"><h3>Direcção Estratégica Compartilhada</h3><p>" + ag3results + " <span>de um total de 12</span> - " + ag3percent + "%</p><p>Isto situa sua organização no:</p><p>" + ag3level + "</p></div>";
         }
         if(ag4results >= 0){
-            res_en += "<div id=\"adv-govscore\"><h3>Stewarding Resources</h3><p>" + ag4results + " <span>out of 24</span> - " + ag4percent + "%</p><p id='place-at'>This places your organization at:</p><p>" + ag4level + "</p></div>";
-            res_fr += "<div id=\"adv-govscore\"><h3>Bonne Intendance des Ressources</h3><p>" + ag4results + " <span>sur 24</span> - " + ag4percent + "%</p><p id='place-at'>Ces résultats placent votre organisation au:</p><p>" + ag4level + "</p></div>";
-            res_es += "<div id=\"adv-govscore\"><h3>Stewarding Resources</h3><p>" + ag4results + " <span>out of 24</span> - " + ag4percent + "%</p><p id='place-at'>This places your organization at:</p><p>" + ag4level + "</p></div>";
-            res_pt += "<div id=\"adv-govscore\"><h3>Stewarding Resources</h3><p>" + ag4results + " <span>out of 24</span> - " + ag4percent + "%</p><p id='place-at'>This places your organization at:</p><p>" + ag4level + "</p></div>";
+            res_en += "<div id=\"adv-govscore\"><h3>Stewarding Resources</h3><p>" + ag4results + " <span>out of 24</span> - " + ag4percent + "%</p><p>This places your organization at:</p><p>" + ag4level + "</p></div>";
+            res_fr += "<div id=\"adv-govscore\"><h3>Bonne Intendance des Ressources</h3><p>" + ag4results + " <span>sur 24</span> - " + ag4percent + "%</p><p>Ces résultats placent votre organisation au:</p><p>" + ag4level + "</p></div>";
+            res_es += "<div id=\"adv-govscore\"><h3>Gestión de los Recursos</h3><p>" + ag4results + " <span> de 24</span> - " + ag4percent + "%</p><p>Esto coloca a su organización en el:</p><p>" + ag4level + "</p></div>";
+            res_pt += "<div id=\"adv-govscore\"><h3>Administração Responsável dos Recursos</h3><p>" + ag4results + " <span>e um total de 24</span> - " + ag4percent + "%</p><p>Isto situa sua organização no:</p><p>" + ag4level + "</p></div>";
         }
         if(ag5results >= 0){
-            res_en += "<div id=\"adv-govscore\"><h3>Continuous Governance Enhancement</h3><p>" + ag5results + " <span>out of 16</span> - " + ag5percent + "%</p><p id='place-at'>This places your organization at:</p><p>" + ag5level + "</p></div>";
-            res_fr += "<div id=\"adv-govscore\"><h3>Amélioration Continue de la Gouvernance</h3><p>" + ag5results + " <span>sur 16</span> - " + ag5percent + "%</p><p id='place-at'>Ces résultats placent votre organisation au:</p><p>" + ag5level + "</p></div>";
-            res_es += "<div id=\"adv-govscore\"><h3>Continuous Governance Enhancement</h3><p>" + ag5results + " <span>out of 16</span> - " + ag5percent + "%</p><p id='place-at'>This places your organization at:</p><p>" + ag5level + "</p></div>";
-            res_pt += "<div id=\"adv-govscore\"><h3>Continuous Governance Enhancement</h3><p>" + ag5results + " <span>out of 16</span> - " + ag5percent + "%</p><p id='place-at'>This places your organization at:</p><p>" + ag5level + "</p></div>";
+            res_en += "<div id=\"adv-govscore\"><h3>Continuous Governance Enhancement</h3><p>" + ag5results + " <span>out of 16</span> - " + ag5percent + "%</p><p>This places your organization at:</p><p>" + ag5level + "</p></div>";
+            res_fr += "<div id=\"adv-govscore\"><h3>Amélioration Continue de la Gouvernance</h3><p>" + ag5results + " <span>sur 16</span> - " + ag5percent + "%</p><p>Ces résultats placent votre organisation au:</p><p>" + ag5level + "</p></div>";
+            res_es += "<div id=\"adv-govscore\"><h3>Mejoramiento Continuo de la Gobernanza</h3><p>" + ag5results + " <span>de 16</span> - " + ag5percent + "%</p><p>Esto coloca a su organización en el:</p><p>" + ag5level + "</p></div>";
+            res_pt += "<div id=\"adv-govscore\"><h3>Melhoria Contínua da Governação</h3><p>" + ag5results + " <span>e um total de 16</span> - " + ag5percent + "%</p><p>Isto situa sua organização no:</p><p>" + ag5level + "</p></div>";
         }
     }
     var lang = localStorage.getObject('lang');
