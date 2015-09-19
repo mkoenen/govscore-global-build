@@ -872,6 +872,7 @@ function calcResults() {
                 }else{ 
                     level = "Transformational governance (highest level/4)";
                 }
+                break;
         }
         return level;
     }
