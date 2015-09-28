@@ -35,8 +35,8 @@ function checkLanguage() {
   navigator.globalization.getPreferredLanguage(
     function (language) {
         var mylang = language.value;
-        mylang = lang.slice(0, 2);
-        translatenow(lang);
+        mylang = mylang.slice(0, 2);
+        translatenow(mylang);
         localStorage.setObject('mylang', mylang);
     },
     function () {alert('Error getting language\n');}
@@ -318,11 +318,11 @@ function map_all(){
 
 function validate(event) {
   if(gsdata){
-        if(lang == "fr" ) {
+        if(mylang == "fr" ) {
                 notification('Vous avez déjà rempli cette évaluation. Veuillez consulter vos résultats.', goTo(), "Déjà complété", "OK");
-            }else if(lang == "es" ) {
+            }else if(mylang == "es" ) {
                 notification('Usted terminó esta evaluación previamente. Por favor verifique sus resultados.', goTo(), "Ya está completada", "OK");
-            }else if(lang == "pt" ) {
+            }else if(mylang == "pt" ) {
                 notification('Você concluiu esta avaliação anteriormente. Favor verificar seus resultados.', goTo(), "Já concluído", "OK");
             }else{
                 notification('You previously finished this assessment. Please check your results.', goTo(), "Already Completed", "OK");
@@ -330,11 +330,11 @@ function validate(event) {
         
   }else{  
       if( document.gsForm.username.value === "" ) {
-            if(lang == "fr" ) {
+            if(mylang == "fr" ) {
                 notification(  "Veuillez saisir votre nom complet." );
-            }else if(lang == "es" ) {
+            }else if(mylang == "es" ) {
                 notification(  "Por favor ingrese su nombre y apellido." );
-            }else if(lang == "pt" ) {
+            }else if(mylang == "pt" ) {
                 notification(  "Favor digitar seu nome completo." );
             }else{
                 notification(  "Please enter your full name." );
@@ -345,11 +345,11 @@ function validate(event) {
              return false;      
       }
       if( document.gsForm.email.value !== document.gsForm.email2.value ) {
-            if(lang == "fr" ) {
+            if(mylang == "fr" ) {
                 notification(  "Le courriel que vous avez saisi ne correspond pas. Veuillez réessayer." );
-            }else if(lang == "es" ) {
+            }else if(mylang == "es" ) {
                 notification(  "Los datos enviados por email no son compatibles. Por favor intente nuevamente. " );
-            }else if(lang == "pt" ) {
+            }else if(mylang == "pt" ) {
                 notification(  "Os emails informados não coincidem. Favor tentar novamente." );
             }else{
                 notification(  "Email entries don't match. Please try again." );
@@ -360,11 +360,11 @@ function validate(event) {
             return false;    
       }
       if( document.gsForm.email.value === "" ) {
-            if(lang == "fr" ) {
+            if(mylang == "fr" ) {
                 notification(  "Veuillez saisir votre adresse e-mail!" );
-            }else if(lang == "es" ) {
+            }else if(mylang == "es" ) {
                 notification(  " Por favor ingrese su dirección de email!" );
-            }else if(lang == "pt" ) {
+            }else if(mylang == "pt" ) {
                 notification(  "Favor informar seu endereço de email!" );
             }else{
                 notification(  "Please enter your email address!" );
@@ -387,11 +387,11 @@ function validate(event) {
           key = "'g" + i +"'";
           value = $('input[name = ' + key + ']:checked').val();
           if(value === "" || value == undefined) {
-                if(lang == "fr" ) {
+                if(mylang == "fr" ) {
                     notification(  "Veuillez répondre à toutes les questions." );
-                }else if(lang == "es" ) {
+                }else if(mylang == "es" ) {
                     notification(  " Por favor responda todas las preguntas." );
-                }else if(lang == "pt" ) {
+                }else if(mylang == "pt" ) {
                     notification(  "Favor responder a todas as perguntas." );
                 }else{
                      notification(  "Please answer all questions.");
@@ -411,11 +411,11 @@ function validateEmail() {
    var dotpos = emailID.lastIndexOf(".");
    if (atpos < 1 || ( dotpos - atpos < 2 )) {
 
-        if(lang == "fr" ) {
+        if(mylang == "fr" ) {
             notification(  "Veuillez saisir votre adresse e-mail exacte." );
-        }else if(lang == "es" ) {
+        }else if(mylang == "es" ) {
             notification(  " Por favor ingrese su dirección de email correcta." );
-        }else if(lang == "pt" ) {
+        }else if(mylang == "pt" ) {
             notification(  "Favor informar seu endereço de email correto." );
         }else{
             notification( "Please enter a correct email address.");
@@ -430,22 +430,22 @@ function validateEmail() {
 
 function adv_validate( savedData, length, keyaug, savefunc){
     if(savedData){
-        if(lang == "fr" ) {
+        if(mylang == "fr" ) {
             notification(  "Vous avez déjà rempli cette évaluation. Veuillez consulter vos résultats.", goTo()," Déjà complété", "OK" );
-        }else if(lang == "es" ) {
+        }else if(mylang == "es" ) {
             notification(  " Usted terminó esta evaluación previamente. Por favor verifique sus resultados.", goTo(), "Ya está completada", "OK" );
-        }else if(lang == "pt" ) {
+        }else if(mylang == "pt" ) {
             notification(  "Você concluiu esta avaliação anteriormente. Favor verificar seus resultados.", goTo(), "Já concluído", "OK" );
         }else{
             nnotification("You previously finished this assessment. Please check your results.", goTo(), "Already Completed", "OK");
         }
         
     }else if(gsdata == null){
-        if(lang == "fr" ) {
+        if(mylang == "fr" ) {
             notification(  " Veuillez procéder à l’évaluation GovScore initiale avant d’accéder aux questionnaires d’évaluation approfondie.", goTo(),"Alert", "OK" );
-        }else if(lang == "es" ) {
+        }else if(mylang == "es" ) {
             notification(  "Por favor complete la evaluación inicial de govscore antes de responder los cuestionarios de Advanced Govscore.", goToGs(), "Alert", "OK" );
-        }else if(lang == "pt" ) {
+        }else if(mylang == "pt" ) {
             notification(  "Favor concluir a avaliação Govscore inicial, antes de passar para os questionários do Govscore Avançado.", goToGs(), "Alert", "OK" );
         }else{
             notification('Please complete the initial Govscore assessment before moving on to the Advanced Govscore questionnaires.', goToGs(), "Alert", "OK");
