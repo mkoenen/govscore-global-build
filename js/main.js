@@ -802,6 +802,7 @@ function showResultsButtons() {
 function showResults(){
 
     var storedResult = localStorage.getItem("result");
+    var mylang = localStorage.getObject('mylang');
 
     if(storedResult){
         document.getElementById('gs-results').innerHTML = storedResult;
