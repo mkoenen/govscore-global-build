@@ -458,11 +458,11 @@ function adv_validate( savedData, length, keyaug, savefunc){
           key = "'ag" + (i+keyaug) +"'";
           value = $('input[name = ' + key + ']:checked').val();
           if(value === "" || value == undefined) {
-                if(lang == "fr" ) {
+                if(mylang == "fr" ) {
                     notification(  "Veuillez répondre à toutes les questions." );
-                }else if(lang == "es" ) {
+                }else if(mylang == "es" ) {
                     notification(  "Por favor responda todas las preguntas." );
-                }else if(lang == "pt" ) {
+                }else if(mylang == "pt" ) {
                     notification(  "Favor responder a todas as perguntas." );
                 }else{
                     notification( "Please answer all questions" );
@@ -549,11 +549,11 @@ function checkConnection(whichfunction) {
                 break;
         }
     }else{
-        if(lang == "fr" ) {
+        if(mylang == "fr" ) {
                     notification(" Vos réponses ont été conservées sur votre appareil. Elles seront sauvegardées sur notre serveur lorsque vous serez à nouveau connectés à l’Internet.", goTo(), "Pas de connexion à l’Internet", "OK");
-                }else if(lang == "es" ) {
+                }else if(mylang == "es" ) {
                     notification(" Sus respuestas han sido guardadas en su dispositivo. Éstas serán almacenadas en su servidor cuando usted vuelva a ingresar al Internet.", goTo(), "No hay conexión a Internet.", "OK");
-                }else if(lang == "pt" ) {
+                }else if(mylang == "pt" ) {
                     notification("Suas respostas foram armazenadas no seu dispositivo. Serão guardadas em nosso servidor quando se reconectar à Internet.", goTo(), "Sem conexão com Internet", "OK");
                 }else{
                     notification("Your answers have been stored on your device. They will be saved to our server when you get reconnected to the internet.", goTo(), "No Internet Connection", "OK");
@@ -651,7 +651,7 @@ var ag5data = localStorage.getObject('ag5data');
 /* store locally */
 function savelocal() {
 
-    var userdata, email, gsdate, username, lang;
+    var userdata, email, gsdate, username;
 
     username = document.getElementById("username").value;
     email = document.gsForm.email.value;
@@ -718,7 +718,7 @@ function ag4savelocal() {
 function ag5savelocal() {
     gsdata = localStorage.getObject('gsdata');
     var ag5date = formatDate(new Date());
-    ag5data = { 'ag5date':ag5date, 'email': gsdata.email, 'mylang': lang, 'answers': [-1]};
+    ag5data = { 'ag5date':ag5date, 'email': gsdata.email, 'mylang': gsdata.mylang, 'answers': [-1]};
     ag5data = getinputs(ag5data,85,100,"ag");  
     localStorage.setObject('ag5data', ag5data);
     calcResults();
@@ -806,11 +806,11 @@ function showResults(){
     if(storedResult){
         document.getElementById('gs-results').innerHTML = storedResult;
     }else{
-        if(lang == "fr" ) {
+        if(mylang == "fr" ) {
             document.getElementById('gs-results').innerHTML = "Aucun résultat disponible à l’heure actuelle.";
-        }else if(lang == "es" ) {
+        }else if(mylang == "es" ) {
             document.getElementById('gs-results').innerHTML = "No hay resultados disponibles en el momento.";
-        }else if(lang == "pt" ) {
+        }else if(mylang == "pt" ) {
             document.getElementById('gs-results').innerHTML = "Nenhum resultado disponível ainda.";
         }else{
             document.getElementById('gs-results').innerHTML = "No Results Available Yet.";
@@ -834,47 +834,47 @@ function calcResults() {
     }
 
     function findLevel(score){
-        var lang = localStorage.getObject('lang');
+        var mylang = localStorage.getObject('mylang');
         switch(true) {
             case( score <= 25 ):
-                if(lang == "fr"){
+                if(mylang == "fr"){
                     level = "Besoin évident de développement de la gouvernance (premier niveau/4)";
-                }else if(lang == "es") {
+                }else if(mylang == "es") {
                     level = " Necesidad clara de desarrollo de la gobernanza (primer nivel/4)";
-                }else if(lang == "pt") {
+                }else if(mylang == "pt") {
                     level = "Necessidade clara de desenvolvimento da governação (primeiro nível/4)";
                 }else{
                 level = "Clear need of governance development (first level/4)";
                 }
                 break;
             case( score > 25 && score <= 50 ):
-                if(lang == "fr"){
+                if(mylang == "fr"){
                     level = " Niveau de gouvernance élémentaire (deuxième niveau/4)";
-                }else if(lang == "es") {
+                }else if(mylang == "es") {
                     level = " Nivel básico de gobernanza (segundo nivel/4)";
-                }else if(lang == "pt") {
+                }else if(mylang == "pt") {
                     level = "Nível básico de governação (segundo nível/4)";
                 }else{
                     level = "Basic level of governance (second level/4)";
                 }
                 break;
             case( score > 50 && score <= 75 ):
-                if(lang == "fr"){
+                if(mylang == "fr"){
                     level = " Gouvernance dynamique et guidée par des objectifs (troisième niveau/4)";
-                }else if(lang == "es") {
+                }else if(mylang == "es") {
                     level = " Gobernanza basada en metas y gobernanza dinámica (tercer nivel/4)";
-                }else if(lang == "pt") {
+                }else if(mylang == "pt") {
                     level = "Governação dinâmica e voltada a metas (terceiro nível/4)";
                 }else{
                     level = "Goal-Driven and dynamic governance (third level/4)";
                 }
                 break;
             case( score > 75 ):
-                if(lang == "fr"){
+                if(mylang == "fr"){
                     level = " Gouvernance transformatrice (niveau le plus élevé/4)";
-                }else if(lang == "es") {
+                }else if(mylang == "es") {
                     level = " Gobernanza transformadora (nivel más alto /4)";
-                }else if(lang == "pt") {
+                }else if(mylang == "pt") {
                     level = "Governação transformadora (nível mais alto/4)";
                 }else{ 
                     level = "Transformational governance (highest level/4)";
@@ -1016,14 +1016,14 @@ function calcResults() {
             res_pt += "<div id=\"adv-govscore\"><h3>Melhoria Contínua da Governação</h3><p>" + ag5results + " <span>e um total de 16</span> - " + ag5percent + "%</p><p>Isto situa sua organização no:</p><p>" + ag5level + "</p></div>";
         }
     }
-    var lang = localStorage.getObject('lang');
-    if(lang == "fr" ) {
+    var mylang = localStorage.getObject('mylang');
+    if(mylang == "fr" ) {
         localStorage.setItem("result", res_fr);
         document.getElementById('gs-results').innerHTML = res_fr;
-    }else if(lang == "es" ) {
+    }else if(mylang == "es" ) {
         localStorage.setItem("result", res_es);
         document.getElementById('gs-results').innerHTML = res_es;
-    }else if(lang == "pt" ) {
+    }else if(mylang == "pt" ) {
         localStorage.setItem("result", res_pt);
         document.getElementById('gs-results').innerHTML = res_pt;
     }else{
