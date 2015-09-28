@@ -42,7 +42,7 @@ function checkLanguage() {
     function () {alert('Error getting language\n');}
   );
 }
-var mylang = localStorage.getObject('mylang');  
+ 
 
 function translatenow(mylang) { 
 
@@ -651,12 +651,12 @@ var ag5data = localStorage.getObject('ag5data');
 /* store locally */
 function savelocal() {
 
-    var userdata, email, gsdate, username;
+    var userdata, email, gsdate, username,mylang;
 
     username = document.getElementById("username").value;
     email = document.gsForm.email.value;
     gsdate  = formatDate(new Date());
-    //mylang = localStorage.getObject('lang');
+    mylang = localStorage.getObject('mylang');
 
     //construct the json array for user data and add to local storage
     gsdata = {'username': username, 'email': email, 'gsdate': gsdate, 'mylang': mylang, 'answers':[-1]};
