@@ -196,5 +196,11 @@ i18n_dict = {
     /* Messages */
     "check-answers" : "Please check your answers. You can only submit this form once.",
     "no-results"    : "No results available at this time.",
-      
+    /* Messages from Server */
+    "prev-submission" : "You have previously submitted your answers. To see the results for your organization visit govscore.net and enter your email and organization. Then go on to the Advanced Govscore assessment.",
+    "gs-success"    : "Your answers to the Govscore assessment have been submitted successfully. To see the results for your organization go to govscoreapp.net and enter your email and organization.", 
+    "prob-submission" : "There was a problem entering your data.",
+    "adv-prev"      : "You have previously submitted your answers. Go to govscoreapp.net and enter your email address to see your results.",
+    "adv-success"   : "You have successfully submitted your answers. Visit govscoreapp.net to see your results.",
+    "gs-first"      : "You need to complete the GovScore initial assessment before you can submit this form.",
   };

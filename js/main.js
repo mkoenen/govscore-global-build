@@ -29,19 +29,20 @@ Storage.prototype.getObject = function(key) {
     return value && JSON.parse(value);
 }
 
+
 /* Language ----------------------------------------*/
 function checkLanguage() {
   navigator.globalization.getPreferredLanguage(
     function (language) {
-        var lang = language.value;
-        lang = lang.slice(0, 2);
+        var mylang = language.value;
+        mylang = lang.slice(0, 2);
         translatenow(lang);
-        localStorage.setObject('lang', lang);
+        localStorage.setObject('mylang', mylang);
     },
     function () {alert('Error getting language\n');}
   );
 }
-var lang = localStorage.getObject('lang');  
+var mylang = localStorage.getObject('mylang');  
 
 function translatenow(mylang) { 
 
@@ -304,6 +305,12 @@ function map_all(){
     $('#ag4-results')._t('govscore-results');
     $('#ag5-results')._t('govscore-results');
     $('#no-results')._t('no-results');
+    $('#prev-submission')._t('prev-submission');
+    $('#gs-success')._t('gs-success');
+    $('#prob-submission')._t('prob-submission');
+    $('#adv-prev')._t('adv-prev');
+    $('#adv-success')._t('adv-success');
+    $('#gs-first')._t('gs-first');
   }
 }
 
@@ -468,7 +475,6 @@ function adv_validate( savedData, length, keyaug, savefunc){
       savefunc();
       } 
 }
-
 
 
 /* Notifications ----------------------------------*/
@@ -645,14 +651,15 @@ var ag5data = localStorage.getObject('ag5data');
 /* store locally */
 function savelocal() {
 
-    var userdata, email, gsdate, username;
+    var userdata, email, gsdate, username, lang;
 
     username = document.getElementById("username").value;
     email = document.gsForm.email.value;
     gsdate  = formatDate(new Date());
+    //mylang = localStorage.getObject('lang');
 
     //construct the json array for user data and add to local storage
-    gsdata = {'username': username, 'email': email, 'gsdate': gsdate, 'answers':[-1]};
+    gsdata = {'username': username, 'email': email, 'gsdate': gsdate, 'mylang': mylang, 'answers':[-1]};
     gsdata = getinputs(gsdata,1,25,"g");
     localStorage.setObject('gsdata', gsdata);   
     calcResults();
@@ -662,7 +669,7 @@ function savelocal() {
 
 /* save to server */
 function saveServer() {
-    var gsdata;
+    var ggsdata;
     //get the data from local storage
     ggsdata = localStorage.getObject('gsdata');
     saveToServer("http://mshlmg.wpengine.com/store-gg-initial.php", ggsdata, "gsSaved");
@@ -675,7 +682,7 @@ function saveServer() {
 function ag1savelocal() {
     gsdata = localStorage.getObject('gsdata');
     var ag1date = formatDate(new Date());
-    ag1data = { 'ag1date':ag1date, 'email': gsdata.email, 'answers': [-1]};
+    ag1data = { 'ag1date':ag1date, 'email': gsdata.email, 'mylang': gsdata.mylang, 'answers': [-1]};
     ag1data = getinputs(ag1data,1,24,"ag");
     localStorage.setObject('ag1data', ag1data);
     calcResults();
@@ -684,7 +691,7 @@ function ag1savelocal() {
 function ag2savelocal() {
     gsdata = localStorage.getObject('gsdata');
     var ag2date = formatDate(new Date());
-    ag2data = { 'ag2date':ag2date, 'email': gsdata.email, 'answers': [-1]};
+    ag2data = { 'ag2date':ag2date, 'email': gsdata.email, 'mylang': gsdata.mylang, 'answers': [-1]};
     ag2data = getinputs(ag2data,25,48,"ag");
     localStorage.setObject('ag2data', ag2data);
     calcResults();
@@ -693,7 +700,7 @@ function ag2savelocal() {
 function ag3savelocal() {
     gsdata = localStorage.getObject('gsdata');
     var ag3date = formatDate(new Date());
-    ag3data = { 'ag3date':ag3date, 'email': gsdata.email, 'answers': [-1]};
+    ag3data = { 'ag3date':ag3date, 'email': gsdata.email, 'mylang': gsdata.mylang, 'answers': [-1]};
     ag3data = getinputs(ag3data,49,60,"ag");
     localStorage.setObject('ag3data', ag3data);
     calcResults();
@@ -702,7 +709,7 @@ function ag3savelocal() {
 function ag4savelocal() {
     gsdata = localStorage.getObject('gsdata');
     var ag4date = formatDate(new Date());
-    ag4data = { 'ag4date':ag4date, 'email': gsdata.email, 'answers': [-1]};
+    ag4data = { 'ag4date':ag4date, 'email': gsdata.email, 'mylang': gsdata.mylang, 'answers': [-1]};
     ag4data = getinputs(ag4data,61,84,"ag");
     localStorage.setObject('ag4data', ag4data);
     calcResults();
@@ -711,7 +718,7 @@ function ag4savelocal() {
 function ag5savelocal() {
     gsdata = localStorage.getObject('gsdata');
     var ag5date = formatDate(new Date());
-    ag5data = { 'ag5date':ag5date, 'email': gsdata.email, 'answers': [-1]};
+    ag5data = { 'ag5date':ag5date, 'email': gsdata.email, 'mylang': lang, 'answers': [-1]};
     ag5data = getinputs(ag5data,85,100,"ag");  
     localStorage.setObject('ag5data', ag5data);
     calcResults();
