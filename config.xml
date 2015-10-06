@@ -51,7 +51,7 @@
     <icon src="res/icons/android/drawable-xxhdpi/icon.png" gap:platform="android" gap:qualifier="xxhdpi" />
     <icon src="res/icons/android/drawable-xxdxhpi/icon.png" gap:platform="android" gap:qualifier="xxxhdpi" />
     
-    <gap:splash src="splash.png" />
+    <gap:splash src="screen.png" />
     <gap:splash src="res/screen/android/drawable-ldpi/screen.png"  gap:platform="android" gap:qualifier="ldpi" />
     <gap:splash src="res/screen/android/drawable-mdpi/screen.png"  gap:platform="android" gap:qualifier="mdpi" />
     <gap:splash src="res/screen/android/drawable-hdpi/screen.png"  gap:platform="android" gap:qualifier="hdpi" />
@@ -69,22 +69,22 @@
     <preference name="prerendered-icon" value="true" />
     <preference name="ios-statusbarstyle" value="black-opaque" />
     <preference name="show-splash-screen-spinner" value="true" />
-    <!--<preference name="SplashScreenDelay" value="5000"/>-->
+    <preference name="SplashScreenDelay" value="10000"/>
+    <preference name="disable-cursor" value="false" />
     <preference name="android-minSdkVersion" value="7" />
     <preference name="android-installLocation" value="auto" />
     <preference name="SplashScreen" value="splash" />
-    <preference name="SplashScreenDelay" value="10000" />
 
     
     <feature name="http://api.phonegap.com/1.0/network"/>
     <feature name="http://api.phonegap.com/1.0/notification"/>
     <feature name="http://api.phonegap.com/1.0/device" />
 
-    <gap:plugin name="org.apache.cordova.splashscreen" />
+    
     <gap:plugin name="org.apache.cordova.network-information" version="0.2.12" />
     <gap:plugin name="com.pushwoosh.plugins.pushwoosh" source="plugins.cordova.io" />
     <!--<gap:plugin name="de.appplant.cordova.plugin.background-mode" version="0.5.0" />-->
-    <gap:plugin name="org.apache.cordova.device" />
+    <!--<gap:plugin name="org.apache.cordova.device" />-->
     <gap:plugin name="org.apache.cordova.dialogs" />
     <gap:plugin name="org.apache.cordova.globalization" version="0.3.1" />
     

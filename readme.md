@@ -1,2 +1,2 @@
-Govscrore Global App
-Users see results at govscoreglobal.org
+Govscrore Global App -
+Users see results at govscoreglobal.org.
