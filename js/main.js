@@ -79,6 +79,7 @@ function map_all(){
     /* Home Page */
     $('h2#about')._t('about');
     $('p#about-text')._t('about-text');
+    $('#steps')._t('steps');
     $('li#step1')._t('step1');
     $('li#step2')._t('step2');
     $('li#step3')._t('step3');
@@ -442,7 +443,7 @@ function adv_validate( savedData, length, keyaug, savefunc){
         }else if(mylang == "pt" ) {
             notification(  "Você concluiu esta avaliação anteriormente. Favor verificar seus resultados.", goTo(), "Já concluído", "OK" );
         }else{
-            nnotification("You previously finished this assessment. Please check your results.", goTo(), "Already Completed", "OK");
+            notification("You previously finished this assessment. Please check your results.", goTo(), "Already Completed", "OK");
         }
         
     }else if(gsdata == null){
