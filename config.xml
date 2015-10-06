@@ -35,13 +35,13 @@
     <icon src="res/icons/ios/icon-50@2x.png" gap:platform="ios" width="100" height="100" />
 
 
-    <gap:splash src="res/screen/ios/Default~iphone.png" width="320" height="480"/>
-    <gap:splash src="res/screen/ios/Default@2x~iphone.png" width="640" height="960"/>
-    <gap:splash src="res/screen/ios/Default-Portrait~ipad.png" width="768" height="1024"/>
-    <gap:splash src="res/screen/ios/Default-Portrait@2x~ipad.png" width="1536" height="2048"/>
-    <gap:splash src="res/screen/ios/Default-Landscape~ipad.png" width="1024" height="768"/>
-    <gap:splash src="res/screen/ios/Default-Landscape@2x~ipad.png" width="2048" height="1536"/>
-    <gap:splash src="res/screen/ios/Default-568h@2x~iphone.png" width="640" height="1136"/>
+    <gap:splash src="res/screen/ios/Default~iphone.png" gap:platform="ios" width="320" height="480"/>
+    <gap:splash src="res/screen/ios/Default@2x~iphone.png" gap:platform="ios" width="640" height="960"/>
+    <gap:splash src="res/screen/ios/Default-Portrait~ipad.png" gap:platform="ios" width="768" height="1024"/>
+    <gap:splash src="res/screen/ios/Default-Portrait@2x~ipad.png" gap:platform="ios" width="1536" height="2048"/>
+    <gap:splash src="res/screen/ios/Default-Landscape~ipad.png" gap:platform="ios" width="1024" height="768"/>
+    <gap:splash src="res/screen/ios/Default-Landscape@2x~ipad.png" gap:platform="ios" width="2048" height="1536"/>
+    <gap:splash src="res/screen/ios/Default-568h@2x~iphone.png" gap:platform="ios" width="640" height="1136"/>
 
     <icon src="icon.png" />
     <icon src="res/icons/android/drawable-ldpi/icon.png" gap:platform="android" gap:qualifier="ldpi" />
@@ -51,7 +51,7 @@
     <icon src="res/icons/android/drawable-xxhdpi/icon.png" gap:platform="android" gap:qualifier="xxhdpi" />
     <icon src="res/icons/android/drawable-xxdxhpi/icon.png" gap:platform="android" gap:qualifier="xxxhdpi" />
     
-    <gap:splash src="screen.png" />
+    <gap:splash src="splash.png" />
     <gap:splash src="res/screen/android/drawable-ldpi/screen.png"  gap:platform="android" gap:qualifier="ldpi" />
     <gap:splash src="res/screen/android/drawable-mdpi/screen.png"  gap:platform="android" gap:qualifier="mdpi" />
     <gap:splash src="res/screen/android/drawable-hdpi/screen.png"  gap:platform="android" gap:qualifier="hdpi" />
@@ -65,29 +65,29 @@
     <preference name="KeyboardDisplayRequiresUserAction" value="false"/>
     <!--<preference name="permissions" value="none" />-->
     <preference name="Orientation" value="default" />
-    <preference name="Fullscreen" value="true" />
     <preference name="webviewbounce" value="true" />
     <preference name="prerendered-icon" value="true" />
-    <preference name="stay-in-webview" value="false" />
     <preference name="ios-statusbarstyle" value="black-opaque" />
     <preference name="show-splash-screen-spinner" value="true" />
-    <preference name="SplashScreenDelay" value="5000"/>
-    <preference name="disable-cursor" value="false" />
+    <!--<preference name="SplashScreenDelay" value="5000"/>-->
     <preference name="android-minSdkVersion" value="7" />
     <preference name="android-installLocation" value="auto" />
-    <preference name="SplashScreen" value="screen"/>
+    <preference name="SplashScreen" value="splash" />
+    <preference name="SplashScreenDelay" value="10000" />
 
     
     <feature name="http://api.phonegap.com/1.0/network"/>
     <feature name="http://api.phonegap.com/1.0/notification"/>
     <feature name="http://api.phonegap.com/1.0/device" />
 
+    <gap:plugin name="org.apache.cordova.splashscreen" />
     <gap:plugin name="org.apache.cordova.network-information" version="0.2.12" />
     <gap:plugin name="com.pushwoosh.plugins.pushwoosh" source="plugins.cordova.io" />
     <!--<gap:plugin name="de.appplant.cordova.plugin.background-mode" version="0.5.0" />-->
     <gap:plugin name="org.apache.cordova.device" />
     <gap:plugin name="org.apache.cordova.dialogs" />
     <gap:plugin name="org.apache.cordova.globalization" version="0.3.1" />
+    
     
 
     <!--<access origin="*"/>--> <!-- allow all pages, use for development -->

@@ -7,6 +7,7 @@ function init(){
     document.addEventListener("deviceready", setbuttons, false);
     document.addEventListener("deviceready", initPushwoosh, true);
     document.addEventListener("deviceready", showResultsButtons, false);
+    document.addEventListener("deviceready", loadscreen, false);
 }
 
 //listen for click events      
@@ -18,6 +19,9 @@ function setbuttons() {
     document.getElementById('ag4Store').addEventListener('click', function(){ adv_validate(ag4data, 24, 60, ag4savelocal); });
     document.getElementById('ag5Store').addEventListener('click', function(){ adv_validate(ag5data, 16, 84, ag5savelocal); });
 }
+function loadscreen() {
+        navigator.splashscreen.show();
+    }
 
 /* Local Storage ----------------------------------*/
 Storage.prototype.setObject = function(key, value) {
@@ -42,11 +46,11 @@ function checkLanguage() {
     function () {alert('Error getting language\n');}
   );
 }
- 
+var mylang = localStorage.getItem('mylang');  
 
 function translatenow(mylang) { 
 
-    alert('language: ' + mylang + ' again\n');
+    //alert('language: ' + mylang + ' again\n');
 
     if(mylang == "fr" ) {
       $.getScript("js/i18n/translation_fr.js", function(){
@@ -261,6 +265,7 @@ function map_all(){
     $('#enhancement')._t('enhancement');
     $('#gs-res-header')._t('gs-res-header');
     /* Bottom Nav */
+    $('#gs')._t('gs');
     $('#adv1')._t('adv');
     $('#res1')._t('res');
     $('#adv2')._t('adv');
@@ -629,7 +634,7 @@ function saveToServer(address,dataset,datasaved){
                 localStorage.setItem(datasaved, "true");
                 showResultsButtons();
                 },
-    error      : function(response) {
+    error      : function(responseData) {
                 notification(responseData); 
                 } 
     });
@@ -922,7 +927,7 @@ function calcResults() {
         res_en += "<div id=\"resources\"><h3>.Stewarding Resources</h3><p>" + resScore + " <span>out of 24 points</span> - " + resPercent + "%.</p></div>";
         res_en += "<div id=\"enhancement\"><h3>.Continuous Governance Enhancement</h3><p>" + enhScore + " <span>out of 24 points</span> - " + enhPercent + "%.</p></div>";
         res_en += "<div id=\"total\"><h3>Total Score</h3><p>" + totalScore +" points out of 100</p><p>This places your organization at:</p><p>" + mlevel + "</p></div>";
-        res_en += "<div id=\"link\"><p>Learn more at <a href=\"http://govscoreapp.net/\">govscoreapp.net</a></p>";
+        res_en += "<div id=\"link\"><p>Learn more at <a href=\"http://govscoreglobal.org/\">govscoreglobal.org</a></p>";
         //document.getElementById('gs-results').innerHTML = res;
         
         var res_fr = "<h2>Évaluation GovScore</h2><p>Vous avez évalué votre organisation de la manière suivante: </p>";
@@ -932,7 +937,7 @@ function calcResults() {
         res_fr += "<div id=\"resources\"><h3>Bonne Intendance des Ressources</h3><p>" + resScore + " <span>sur 24 points</span> - " + resPercent + "%.</p></div>";
         res_fr += "<div id=\"enhancement\"><h3>Amélioration Continue de la Gouvernance</h3><p>" + enhScore + " <span>sur 24 points</span> - " + enhPercent + "%.</p></div>";
         res_fr += "<div id=\"total\"><h3>Score Total</h3><p>" + totalScore +" points sur 100</p><p> Ces résultats placent votre organisation au: </p><p>" + mlevel + "</p></div>";
-        res_fr += "<div id=\"link\"><p>Consultez <a href='http://govscoreapp.net/'>govscoreapp.net </a>pour en savoir plus.</p>";
+        res_fr += "<div id=\"link\"><p>Consultez <a href='http://govscoreglobal.org'>govscoreglobal.org</a>pour en savoir plus.</p>";
 
         var res_es = "<h2>Evaluación Govscore</h2><p>Usted evaluó a su organización como sigue: </p>";
         res_es += "<div id=\"accountability\"><h3>Cultivar la Rendición de Cuentas</h3><p>" + accScore + " <span>de 24 puntos</span> - " + accPercent + "%.</p></div>";
@@ -941,7 +946,7 @@ function calcResults() {
         res_es += "<div id=\"resources\"><h3>Gestión de los Recursos</h3><p>" + resScore + " <span>de 24 puntos</span> - " + resPercent + "%.</p></div>";
         res_es += "<div id=\"enhancement\"><h3>Mejoramiento Continuo de la Gobernanza</h3><p>" + enhScore + " <span>de 24 puntos</span> - " + enhPercent + "%.</p></div>";
         res_es += "<div id=\"total\"><h3>Puntuación Total</h3><p>" + totalScore +" de 100 puntos</p><p>Esto coloca a su organización en el:</p><p class=\"level\">" + mlevel + "</p></div>";
-        res_es += "<div id=\"link\"><p>Aprender más en <a href='http://govscoreapp.net/'>govscoreapp.net </a>.</p>";
+        res_es += "<div id=\"link\"><p>Aprender más en <a href='http://govscoreglobal.org'>govscoreglobal.org</a>.</p>";
 
         var res_pt = "<h2>Avaliação do Govscore</h2><p>Você avaliou sua organização da seguinte forma: </p>";
         res_pt += "<div id=\"accountability\"><h3>Cultivo da Responsabilidade de Prestação de Contas</h3><p>" + accScore + " <span>de um total de 24 pontos</span> - " + accPercent + "%.</p></div>";
@@ -950,7 +955,7 @@ function calcResults() {
         res_pt += "<div id=\"resources\"><h3>Administração responsável dos recursos</h3><p>" + resScore + " <span>de um total de 24 pontos</span> - " + resPercent + "%.</p></div>";
         res_pt += "<div id=\"enhancement\"><h3>Melhoria contínua da governação</h3><p>" + enhScore + " <span>de um total de 24 pontos</span> - " + enhPercent + "%.</p></div>";
         res_pt += "<div id=\"total\"><h3>Pontuação total</h3><p>" + totalScore +" de um total de 100 pontos</p><p>Isto situa sua organização no: </p><p class=\"level\">" + mlevel + "</p></div>";
-        res_pt += "<div id=\"link\"><p>Obtenha mais informações em <a href='http://govscoreapp.net'>govscoreapp.net</a>.</p>";
+        res_pt += "<div id=\"link\"><p>Obtenha mais informações em <a href='http://govscoreglobal.org'>govscoreglobal.org</a>.</p>";
     }
 
     if(ag1data || ag2data || ag3data || ag4data || ag5data ){
