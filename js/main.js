@@ -6,9 +6,7 @@ function init(){
     document.addEventListener("deviceready", showResults, false);
     document.addEventListener("deviceready", setbuttons, false);
     document.addEventListener("deviceready", initPushwoosh, true);
-    document.addEventListener("deviceready", showResultsButtons, false);
-    document.addEventListener("deviceready", loadscreen, false);
-}
+    document.addEventListener("deviceready", showResultsButtons, false);}
 
 //listen for click events      
 function setbuttons() {
@@ -19,9 +17,6 @@ function setbuttons() {
     document.getElementById('ag4Store').addEventListener('click', function(){ adv_validate(ag4data, 24, 60, ag4savelocal); });
     document.getElementById('ag5Store').addEventListener('click', function(){ adv_validate(ag5data, 16, 84, ag5savelocal); });
 }
-function loadscreen() {
-        navigator.splashscreen.show();
-    }
 
 /* Local Storage ----------------------------------*/
 Storage.prototype.setObject = function(key, value) {
@@ -68,11 +63,12 @@ function translatenow(mylang) {
         map_all();
       });
     }else{
-      $.getScript("js/i18n/translation_en.js", function(){
-        $.i18n.load(i18n_dict);
-        map_all();
+        //just load the normal page
+      // $.getScript("js/i18n/translation_en.js", function(){
+      //   $.i18n.load(i18n_dict);
+      //   map_all();
         
-      });
+      // });
     }
 
 function map_all(){
@@ -929,7 +925,7 @@ function calcResults() {
         res_en += "<div id=\"enhancement\"><h3>.Continuous Governance Enhancement</h3><p>" + enhScore + " <span>out of 24 points</span> - " + enhPercent + "%.</p></div>";
         res_en += "<div id=\"total\"><h3>Total Score</h3><p>" + totalScore +" points out of 100</p><p>This places your organization at:</p><p>" + mlevel + "</p></div>";
         res_en += "<div id=\"link\"><p>Learn more at <a href=\"http://govscoreglobal.org/\">govscoreglobal.org</a></p>";
-        //document.getElementById('gs-results').innerHTML = res;
+
         
         var res_fr = "<h2>Évaluation GovScore</h2><p>Vous avez évalué votre organisation de la manière suivante: </p>";
         res_fr += "<div id=\"accountability\"><h3>Cultiver le Respect des Engagements</h3><p>" + accScore + " <span> sur 24 points</span> - " + accPercent + "%.</p></div>";
