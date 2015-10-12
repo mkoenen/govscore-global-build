@@ -19,7 +19,7 @@
     </author>
 
     <feature name="debug-server" required="true">
-        <param name="domain" value="173.2.182.62"/>
+        <param name="domain" value="192.168.1.70"/>
         <param name="key" value="govscore"/>
       </feature>
 
