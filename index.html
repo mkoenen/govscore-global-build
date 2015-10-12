@@ -9,7 +9,14 @@
     <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
     <script type="text/javascript" src="lib/jquery-2.1.3.min.js"></script>
     <script type="text/javascript" src="lib/jquery.mobile-1.4.5.min.js"></script>
-   
+    <script type="text/javascript">
+    jquery(window).load(function($){
+        $('#1none .').click(function(){
+             $('#1none').blur();
+        });
+    });
+    
+    </script>
     <title>Govscore</title>
     
 </head>
@@ -88,15 +95,15 @@
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
                         <legend><span id="gs1">1. The governing body has a clear understanding of its purpose and role.</span><a href="#popupBasic" data-transition="fade" data-rel="popup" class="legend">?</a></legend>
 
-                            <input type="radio" name="g1" id="1none" value="0" readonly>
+                            <input type="radio" name="g1" id="1none" value="0" >
                             <label for="1none"><img src="img/empty.png" /></label>
-                            <input type="radio" name="g1" id="1minimally" value="1" readonly>
+                            <input type="radio" name="g1" id="1minimally" value="1">
                             <label for="1minimally"><img src="img/one-quarter.png" /></label>
-                            <input type="radio" name="g1" id="1partly" value="2" readonly>
+                            <input type="radio" name="g1" id="1partly" value="2">
                             <label for="1partly"><img src="img/half.png" /></label>
-                            <input type="radio" name="g1" id="1mostly" value="3" readonly>
+                            <input type="radio" name="g1" id="1mostly" value="3">
                             <label for="1mostly"><img src="img/three-quarter.png" /></label>
-                            <input type="radio" name="g1" id="1completely" value="4" readonly>
+                            <input type="radio" name="g1" id="1completely" value="4">
                             <label for="1completely"><img src="img/full.png" /></label>
                     </fieldset>
                     <br />
