@@ -32,16 +32,19 @@ Storage.prototype.getObject = function(key) {
 
 /* hide Keyboard -----------------------------------*/
 function hideKeyboard(){
-    $('#1none-img').click(function(){
-        notification("image has been clicked");
-             $('#email2').blur();
-        });
-    $('#1none-label').click(function(){
-        notification("label has been clicked");
-             $('#email2').blur();
-        });
     $('#1none').click(function(){
-        notification("input has been clicked");
+             $('#email2').blur();
+        });
+    $('#1minimally').click(function(){
+             $('#email2').blur();
+        });
+    $('#1partly').click(function(){
+             $('#email2').blur();
+        });
+    $('#1mostly').click(function(){
+             $('#email2').blur();
+        });
+    $('#1completely').click(function(){
              $('#email2').blur();
         });
 }
