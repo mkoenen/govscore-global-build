@@ -6,7 +6,9 @@ function init(){
     document.addEventListener("deviceready", showResults, false);
     document.addEventListener("deviceready", setbuttons, false);
     document.addEventListener("deviceready", initPushwoosh, true);
-    document.addEventListener("deviceready", showResultsButtons, false);}
+    document.addEventListener("deviceready", showResultsButtons, false);
+    document.addEventListener("deviceready", hideKeyboard, false);
+}
 
 //listen for click events      
 function setbuttons() {
@@ -28,6 +30,13 @@ Storage.prototype.getObject = function(key) {
     return value && JSON.parse(value);
 }
 
+/* hide Keyboard -----------------------------------*/
+function hideKeyboard(){
+    $('#1none').click(function(){
+             $('#email2').blur();
+        });
+}
+        
 
 /* Language ----------------------------------------*/
 function checkLanguage() {
