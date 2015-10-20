@@ -50,7 +50,7 @@
     <icon src="res/icons/android/drawable-hdpi/icon.png" gap:platform="android" gap:qualifier="hdpi" />
     <icon src="res/icons/android/drawable-xhdpi/icon.png" gap:platform="android" gap:qualifier="xhdpi" />
     <icon src="res/icons/android/drawable-xxhdpi/icon.png" gap:platform="android" gap:qualifier="xxhdpi" />
-    <icon src="res/icons/android/drawable-xxdxhpi/icon.png" gap:platform="android" gap:qualifier="xxxhdpi" />
+    <icon src="res/icons/android/drawable-xxxhdpi/icon.png" gap:platform="android" gap:qualifier="xxxhdpi" />
     
     <gap:splash src="splash.png" />
     <gap:splash src="res/splash/android/ldpi.png"  gap:platform="android" gap:qualifier="ldpi" />
@@ -90,7 +90,8 @@
     <gap:plugin name="org.apache.cordova.globalization" version="0.3.1" />
     <gap:plugin name="cordova-plugin-whitelist" source="npm" />
     <gap:plugin name="org.apache.cordova.device" version="0.2.12" />
-    <gap:plugin name="org.apache.cordova.splashscreen" version="0.3.4" />
+    <!--<gap:plugin name="org.apache.cordova.splashscreen" version="0.3.4" />-->
+    <gap:plugin name="cordova-plugin-splashscreen" version="2.1.0" source="npm" />
     
     <access origin="*.pushwoosh.com"/> <!-- allow pushwoosh service -->
     <access origin="http://mshlmg.wpengine.com" />
