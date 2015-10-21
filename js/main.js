@@ -674,10 +674,10 @@ var ag5data = localStorage.getObject('ag5data');
 /* store locally */
 function savelocal() {
 
-    var userdata, email, gsdate, username,mylang;
+    var userdata, email, gsdate, username, mylang;
 
     username = document.getElementById("username").value;
-    email = document.gsForm.email.value;
+    email = document.getElementById("email").value;
     gsdate  = formatDate(new Date());
     mylang = localStorage.getObject('mylang');
 
