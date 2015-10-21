@@ -10,12 +10,11 @@
 .ui-footer .ui-navbar li {
 	height: 100%;
 }
-
 .ui-controlgroup-controls {
-width: 100%;
+	width: 100%;
 }
 .ui-radio.ui-mini {
-width: 20%;
+	border-width: 20%;
 }
 label.ui-btn.ui-corner-all.ui-btn-inherit {
 	font-weight: normal;
@@ -24,17 +23,17 @@ label.ui-btn.ui-corner-all.ui-btn-inherit {
 	text-align: center;
 }
 .ui-header .ui-btn-left.ui-icon-home {
-background-color: rgba(51, 51, 51, 0);
-border-color: rgba(0, 0, 0, 0);
-text-shadow: none;
+	background-color: rgba(51, 51, 51, 0);
+	border-color: rgba(0, 0, 0, 0);
+	text-shadow: none;
 }
 .ui-header .ui-btn-left.ui-icon-home:hover {
-background-color: #aaaaaa !important;
-border-color: #aaaaaa !important;
-text-shadow: none !important;
+	background-color: #aaaaaa !important;
+	border-color: #aaaaaa !important;
+	text-shadow: none !important;
 }
 .ui-header, .ui-footer {
-border-top-width: 2px !important;
+	border-top-width: 2px !important;
 }
 
 /* questionnaire ---------------------------------*/
@@ -99,13 +98,12 @@ a.legend.ui-link {
 	position: fixed !important;
 	top: 60px !important;
 	left: 25% !important;
-	}
+}
 .ui-popup.ui-body-inherit {
 	border-width: 1px;
 	border-style: solid;
 	border-color:#CBE8C5;
 }
-
 div#popupBasic {
 	background: #CBE8C5;
 }
