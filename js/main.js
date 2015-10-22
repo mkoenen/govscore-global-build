@@ -1061,7 +1061,7 @@ function calcResults() {
 
 /* Pushwoosh ---------------------------------------------------*/
 function initPushwoosh() {
-      var pushNotification = cordova.require("com.pushwoosh.plugins.pushwoosh.PushNotification");
+      var pushNotification = window.plugins.pushNotification;
 
       if(device.platform == "Android")
       {
