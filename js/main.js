@@ -1062,7 +1062,7 @@ function calcResults() {
 /* Pushwoosh ---------------------------------------------------*/
 
 function registerPushwooshAndroid() {
-    var pushNotification = cordova.require("com.pushwoosh.plugins.pushwoosh.PushNotification");
+    var pushNotification = window.plugins.pushNotification;
  
     //set push notifications handler
     document.addEventListener('push-notification', function(event) {
@@ -1092,7 +1092,7 @@ function registerPushwooshAndroid() {
 }
 
 function registerPushwooshIOS() {
-    var pushNotification = cordova.require("com.pushwoosh.plugins.pushwoosh.PushNotification");
+    var pushNotification = window.plugins.pushNotification;
  
     //set push notification callback before we initialize the plugin
     document.addEventListener('push-notification', function(event) {
