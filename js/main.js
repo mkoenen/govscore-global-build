@@ -1060,9 +1060,20 @@ function calcResults() {
 
 
 /* Pushwoosh ---------------------------------------------------*/
+function initPushwoosh() {
+      var pushNotification = cordova.require("com.pushwoosh.plugins.pushwoosh.PushNotification");
+
+      if(device.platform == "Android")
+      {
+        registerPushwooshAndroid();
+      }else if(device.platform == "iPhone" || device.platform == "iOS")
+      {
+        registerPushwooshIOS();
+      }
+    }
 
 function registerPushwooshAndroid() {
-    var pushNotification = window.plugins.pushNotification;
+     var pushNotification = cordova.require("com.pushwoosh.plugins.pushwoosh.PushNotification");
  
     //set push notifications handler
     document.addEventListener('push-notification', function(event) {
@@ -1092,7 +1103,7 @@ function registerPushwooshAndroid() {
 }
 
 function registerPushwooshIOS() {
-    var pushNotification = window.plugins.pushNotification;
+    var pushNotification = cordova.require("com.pushwoosh.plugins.pushwoosh.PushNotification");
  
     //set push notification callback before we initialize the plugin
     document.addEventListener('push-notification', function(event) {
@@ -1117,7 +1128,7 @@ function registerPushwooshIOS() {
         },
         function(status) {
             console.warn('failed to register : ' + JSON.stringify(status));
-            //alert(JSON.stringify(['failed to register ', status]));
+            alert(JSON.stringify(['failed to register ', status]));
         }
     );
      
