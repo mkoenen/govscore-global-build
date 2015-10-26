@@ -22,11 +22,15 @@ label.ui-btn.ui-corner-all.ui-btn-inherit {
 	height: auto;
 	text-align: center;
 }
-.ui-header a.ui-nodisc-icon.ui-icon-arrow-l.ui-btn-icon-notext,
+html body .ui-btn.ui-btn-b {
+	background-color: transparent !important;
+	border:none !important;
+}
+a.ui-nodisc-icon.ui-icon-arrow-l.ui-btn-icon-notext,
 .ui-navbar ul li a.ui-nodisc-icon.ui-icon-home,
-.ui-header a.ui-nodisc-icon.ui-icon-arrow-l.ui-btn-icon-notext:active,
+a.ui-nodisc-icon.ui-icon-arrow-l.ui-btn-icon-notext:active,
 .ui-navbar ul li a.ui-nodisc-icon.ui-icon-home:active, {
-    background-color: rgba(1,1,1,0) !important;
+    background-color: transparent !important;
     border: none !important;
     text-shadow: none !important;
 }
