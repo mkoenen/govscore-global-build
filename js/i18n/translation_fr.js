@@ -196,11 +196,4 @@ i18n_dict_fr = {
     /* Messages */
     "check-answers" : "Veuillez vérifier vos réponses. Vous ne pouvez envoyer ce formulaire qu’une fois.",
     "no-results"    : "Aucun résultat disponible à l’heure actuelle.",
-    /* Messages from Server */
-    "prev-submission" : "frYou have previously submitted your answers. To see the results for your organization visit govscoreglobal.org and enter your email and organization. Then go on to the Advanced Govscore assessment.",
-    "gs-success"    : "frYour answers to the Govscore assessment have been submitted successfully. To see the results for your organization go to govscoreglobal.org and enter your email and organization.", 
-    "prob-submission" : "frThere was a problem entering your data.",
-    "adv-prev"      : "frYou have previously submitted your answers. Go to govscoreglobal.org and enter your email address to see your results.",
-    "adv-success"   : "frYou have successfully submitted your answers. Visit govscoreglobal.org to see your results.",
-    "gs-first"      : "frYou need to complete the GovScore initial assessment before you can submit this form.",
 };

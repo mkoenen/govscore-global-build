@@ -328,12 +328,6 @@ function map_all(){
     $('#ag4-results')._t('govscore-results');
     $('#ag5-results')._t('govscore-results');
     $('#no-results')._t('no-results');
-    $('#prev-submission')._t('prev-submission');
-    $('#gs-success')._t('gs-success');
-    $('#prob-submission')._t('prob-submission');
-    $('#adv-prev')._t('adv-prev');
-    $('#adv-success')._t('adv-success');
-    $('#gs-first')._t('gs-first');
   }
 }
 
