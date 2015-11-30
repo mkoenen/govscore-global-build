@@ -103,7 +103,11 @@ a.legend.ui-link {
 	padding: 0 8px 0 8px;
 	text-decoration: none;
 }
-
+/* home logos -----------------------------*/
+#home img {
+	width: 60%;
+	margin: 20px 20%;
+}
 /* adv gs links page -----------------------------*/
 
 #acc-btn.gray,

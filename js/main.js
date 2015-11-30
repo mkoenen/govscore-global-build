@@ -935,9 +935,9 @@ function calcResults() {
         var res_en = "<h2>Govscore Assessment</h2><p>You assessed your organization a follows: </p>";
         res_en += "<div id=\"accountability\"><h3>Cultivating Accountability</h3><p>" + accScore + " <span>out of 24 points</span> - " + accPercent + "%.</p></div>";
         res_en += "<div id=\"stakeholders\"><h3>Engaging Stakeholders</h3><p>" + stakeScore + " <span>out of 12 points</span> - " + stakePercent + "%.</p></div>";
-        res_en += "<div id=\"direction\"><h3>.Shared Strategic Direction</h3><p>" + dirScore + " <span>out of 16 points</span> - " + dirPercent + "%.</p></div>";
-        res_en += "<div id=\"resources\"><h3>.Stewarding Resources</h3><p>" + resScore + " <span>out of 24 points</span> - " + resPercent + "%.</p></div>";
-        res_en += "<div id=\"enhancement\"><h3>.Continuous Governance Enhancement</h3><p>" + enhScore + " <span>out of 24 points</span> - " + enhPercent + "%.</p></div>";
+        res_en += "<div id=\"direction\"><h3>Shared Strategic Direction</h3><p>" + dirScore + " <span>out of 16 points</span> - " + dirPercent + "%.</p></div>";
+        res_en += "<div id=\"resources\"><h3>Stewarding Resources</h3><p>" + resScore + " <span>out of 24 points</span> - " + resPercent + "%.</p></div>";
+        res_en += "<div id=\"enhancement\"><h3>Continuous Governance Enhancement</h3><p>" + enhScore + " <span>out of 24 points</span> - " + enhPercent + "%.</p></div>";
         res_en += "<div id=\"total\"><h3>Total Score</h3><p>" + totalScore +" points out of 100</p><p>This places your organization at:</p><p>" + mlevel + "</p></div>";
         res_en += "<div id=\"link\"><p>Learn more at <a href=\"http://govscoreglobal.org/\">govscoreglobal.org</a></p>";
 
