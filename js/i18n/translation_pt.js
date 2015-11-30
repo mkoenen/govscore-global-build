@@ -11,6 +11,7 @@ i18n_dict_pt = {
     "step7"       : "7. Visualize os resultados iniciais no seu telefone.",
     "step8"       : "8. Examine o resultado combinado Advanced GovScore de todos os avaliadores da sua organização em <a href='http://govscoreglobal.org'>govscoreglobal.org</a> e obtenha mais análises e recomendações individualizadas para aperfeiçoamento. Veja como os resultados da sua organização se comparam aos resultados agregados de todas as organizações.",
     "step-last"   : "A boa governação leva a uma gestão eficaz e eficiente de pessoas, dinheiro, medicamentos e informação. A boa gestão facilita o trabalho dos médicos, enfermeiros, outros clínicos e profissionais de saúde. Permite-lhes prestar cuidados e serviços seguros, atempados, efectivos e eficientes que respeitam e respondem às preferências, necessidades e valores dos pacientes individuais e dos utilizadores dos serviços de saúde. A boa governação assegura essencialmente uma boa gestão, o que, por sua vez, permite a prestação de serviços de confiança e desempenho organizacional superior.",
+    "disclaimer"  : "O financiamento para este app foi fornecida pela Agência dos Estados Unidos para o Desenvolvimento Internacional (USAID ), sob Cooperativa Acordo AIDOAA -A- 11-00015. Os conteúdos são da responsabilidade da LMG e não refletem necessariamente as opiniões da USAID ou do Governo dos Estados Unidos.",
     "name"        : "Nome próprio seguido do apelido", 
     "email"       : "Email",
     "email2"      : "Escreva novamente o email",

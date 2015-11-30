@@ -12,6 +12,7 @@ i18n_dict = {
     "step7"       : "7. View your results on your phone.",
     "step8"       : "8. Examine the combined Advanced GovScore result of all evaluators of your organization on <a href='http://govscoreglobal.org'>govscoreglobal.org</a> and get further individualized analysis and recommendations for improvement. See how your organizations results compares to the aggregate results of all organizations.",
     "step-last"   : "Good governance leads to effective and efficient management of people, money, medicines and information. Sound management in turn facilitates the work of doctors, nurses, other clinicians and health workers and enables them to provide safe, timely, effective, and efficient care and services that are respectful of and responsive to individual patient and health service user preferences, needs, and values. Good governance essentially assures sound management which in turn enables reliable service delivery and higher organizational performance.",
+    "disclaimer"  : "Funding for this app was provided by the United States Agency for International Development (USAID) under Cooperative Agreement AIDOAA-A-11-00015. The contents are the responsibility of the Leadership, Management, and Governance Project and do not necessarily reflect the views of USAID or the United States Government.",
     "name"        : "Name",
     "email"       : "Email",
     "email2"      : "Confirm Email",

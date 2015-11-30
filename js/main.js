@@ -106,6 +106,7 @@ function map_all(){
     $('li#step7')._t('step7');
     $('li#step8')._t('step8');
     $('p#step-last')._t('step-last');
+    $('#disclaimer')._t('disclaimer')
     /* Govscore */
     $('#name-input')._t('name-input');
     $('#email')._t('email');
