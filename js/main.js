@@ -857,46 +857,46 @@ function calcResults() {
         switch(true) {
             case( score <= 25 ):
                 if(mylang == "fr"){
-                    level = "Besoin évident de développement de la gouvernance (premier niveau/4)";
+                    level = "Besoin évident de développement de la gouvernance (niveau 1)";
                 }else if(mylang == "es") {
-                    level = " Necesidad clara de desarrollo de la gobernanza (primer nivel/4)";
+                    level = " Necesidad clara de desarrollo de la gobernanza (nivel 1)";
                 }else if(mylang == "pt") {
-                    level = "Necessidade clara de desenvolvimento da governação (primeiro nível/4)";
+                    level = "Necessidade clara de desenvolvimento da governação (nível 1)";
                 }else{
-                level = "Clear need of governance development (first level/4)";
+                level = "Clear need of governance development (level 1)";
                 }
                 break;
             case( score > 25 && score <= 50 ):
                 if(mylang == "fr"){
-                    level = " Niveau de gouvernance élémentaire (deuxième niveau/4)";
+                    level = " Niveau de gouvernance élémentaire (niveau 2)";
                 }else if(mylang == "es") {
-                    level = " Nivel básico de gobernanza (segundo nivel/4)";
+                    level = " Nivel básico de gobernanza (nivel 2)";
                 }else if(mylang == "pt") {
-                    level = "Nível básico de governação (segundo nível/4)";
+                    level = "Nível básico de governação (nível 2)";
                 }else{
-                    level = "Basic level of governance (second level/4)";
+                    level = "Basic level of governance (level 2)";
                 }
                 break;
             case( score > 50 && score <= 75 ):
                 if(mylang == "fr"){
-                    level = " Gouvernance dynamique et guidée par des objectifs (troisième niveau/4)";
+                    level = " Gouvernance dynamique et guidée par des objectifs (niveau 3)";
                 }else if(mylang == "es") {
-                    level = " Gobernanza basada en metas y gobernanza dinámica (tercer nivel/4)";
+                    level = " Gobernanza basada en metas y gobernanza dinámica (nivel 3)";
                 }else if(mylang == "pt") {
-                    level = "Governação dinâmica e voltada a metas (terceiro nível/4)";
+                    level = "Governação dinâmica e voltada a metas (nível 3)";
                 }else{
-                    level = "Goal-Driven and dynamic governance (third level/4)";
+                    level = "Goal-Driven and dynamic governance (level 3)";
                 }
                 break;
             case( score > 75 ):
                 if(mylang == "fr"){
-                    level = " Gouvernance transformatrice (niveau le plus élevé/4)";
+                    level = " Gouvernance transformatrice (niveau 4)";
                 }else if(mylang == "es") {
-                    level = " Gobernanza transformadora (nivel más alto /4)";
+                    level = " Gobernanza transformadora (nivel 4)";
                 }else if(mylang == "pt") {
-                    level = "Governação transformadora (nível mais alto/4)";
+                    level = "Governação transformadora (nível 4)";
                 }else{ 
-                    level = "Transformational governance (highest level/4)";
+                    level = "Transformational governance (level 4)";
                 }
                 break;
         }
@@ -933,14 +933,14 @@ function calcResults() {
         mlevel = findLevel(totalScore);
 
         //list each area with the score
-        var res_en = "<h2>Govscore Assessment</h2><p>You assessed your organization a follows: </p>";
+        var res_en = "<h2>Govscore Assessment</h2><p>You assessed your organization as follows: </p>";
         res_en += "<div id=\"accountability\"><h3>Cultivating Accountability</h3><p>" + accScore + " <span>out of 24 points</span> - " + accPercent + "%.</p></div>";
         res_en += "<div id=\"stakeholders\"><h3>Engaging Stakeholders</h3><p>" + stakeScore + " <span>out of 12 points</span> - " + stakePercent + "%.</p></div>";
         res_en += "<div id=\"direction\"><h3>Shared Strategic Direction</h3><p>" + dirScore + " <span>out of 16 points</span> - " + dirPercent + "%.</p></div>";
         res_en += "<div id=\"resources\"><h3>Stewarding Resources</h3><p>" + resScore + " <span>out of 24 points</span> - " + resPercent + "%.</p></div>";
         res_en += "<div id=\"enhancement\"><h3>Continuous Governance Enhancement</h3><p>" + enhScore + " <span>out of 24 points</span> - " + enhPercent + "%.</p></div>";
         res_en += "<div id=\"total\"><h3>Total Score</h3><p>" + totalScore +" points out of 100</p><p>This places your organization at:</p><p>" + mlevel + "</p></div>";
-        res_en += "<div id=\"link\"><p>Learn more at <a href=\"http://govscoreglobal.org/\">govscoreglobal.org</a></p>";
+        res_en += "<div id=\"link\"><p>See the complete results at <a href=\"http://govscoreglobal.org/\">govscoreglobal.org</a></p>";
 
         
         var res_fr = "<h2>Évaluation GovScore</h2><p>Vous avez évalué votre organisation de la manière suivante: </p>";
