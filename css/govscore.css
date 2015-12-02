@@ -1,7 +1,10 @@
 .ui-page .ui-header .ui-title {
 	margin: 0 20%;
 }
-
+#header-img {
+	width: 100%;
+	margin: 0;
+}
 /* navigation -------------------------------------*/
 
 .ui-btn-active {
